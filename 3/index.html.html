@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ 閃亮亮一週星座運勢 ✨</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Google Fonts: Mali (可愛手寫風格字體) -->
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 基礎設定 */
+        body {
+            font-family: 'Mali', cursive;
+            background: linear-gradient(135deg, #ffe2e2 0%, #e2e2ff 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #5a4b4b;
+        }
+
+        /* 隱藏捲軸但保留滾動功能 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ffb7b2;
+            border-radius: 10px;
+        }
+
+        /* 浮動動畫 */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .floating-delay-1 {
+            animation: float 5s ease-in-out infinite 1s;
+        }
+        
+        .floating-delay-2 {
+            animation: float 4.5s ease-in-out infinite 2s;
+        }
+
+        /* 彈出視窗動畫 */
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .pop-in {
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        /* 卡片 hover 效果增強 */
+        .zodiac-card {
+            transition: all 0.3s ease;
+        }
+        .zodiac-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px -5px rgba(255, 183, 178, 0.4);
+        }
+
+        /* 裝飾性背景泡泡 */
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="relative flex flex-col items-center py-10 px-4">
+
+    <!-- 背景裝飾 -->
+    <div class="bubble w-32 h-32 top-10 left-10 blur-xl"></div>
+    <div class="bubble w-48 h-48 top-1/3 right-5 blur-xl"></div>
+    <div class="bubble w-40 h-40 bottom-20 left-1/4 blur-xl"></div>
+
+    <!-- 標題區塊 -->
+    <header class="text-center mb-12 floating">
+        <h1 class="text-3xl md:text-5xl font-bold text-pink-500 mb-3 drop-shadow-md">
+            ✨ 閃亮亮一週星座運勢 ✨
+        </h1>
+        <p class="text-lg text-purple-500 font-semibold bg-white/50 inline-block px-4 py-1 rounded-full shadow-sm">
+            本週好運指南 (11/02 - 11/08)
+        </p>
+    </header>
+
+    <!-- 星座卡片網格 -->
+    <main class="w-full max-w-5xl">
+        <div id="zodiac-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            <!-- 卡片將由 JavaScript 動態生成 -->
+        </div>
+    </main>
+
+    <!-- 彈出視窗 (Modal) -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black/30 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
+        <div id="modal-content" class="bg-white rounded-[2rem] w-full max-w-md p-6 shadow-2xl relative border-4 border-pink-200">
+            <!-- 關閉按鈕 -->
+            <button id="close-modal" class="absolute -top-4 -right-4 bg-pink-400 text-white w-10 h-10 rounded-full text-xl font-bold shadow-lg hover:bg-pink-500 transition-colors z-10">
+                ✕
+            </button>
+            
+            <!-- Modal 內容 -->
+            <div class="text-center mb-4">
+                <div id="modal-icon" class="text-6xl mb-2 floating-delay-1">🌟</div>
+                <h2 id="modal-title" class="text-2xl font-bold text-gray-800">星座名稱</h2>
+                <p id="modal-date" class="text-sm text-gray-500 mb-2">日期</p>
+                <div class="flex justify-center gap-1 text-yellow-400 text-xl" id="modal-stars">
+                    <!-- 星星動態插入 -->
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-pink-50 p-4 rounded-2xl border border-pink-100">
+                    <h3 class="text-pink-600 font-bold mb-1 flex items-center gap-2">
+                        <span>🌈</span> 整體運勢
+                    </h3>
+                    <p id="modal-overall" class="text-gray-700 text-sm leading-relaxed"></p>
+                </div>
+                
+                <div class="bg-rose-50 p-4 rounded-2xl border border-rose-100">
+                    <h3 class="text-rose-500 font-bold mb-1 flex items-center gap-2">
+                        <span>💖</span> 戀愛運
+                    </h3>
+                    <p id="modal-love" class="text-gray-700 text-sm leading-relaxed"></p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-blue-50 p-3 rounded-2xl border border-blue-100">
+                        <h3 class="text-blue-500 font-bold mb-1 text-sm flex items-center gap-1">
+                            <span>💼</span> 事業/學業
+                        </h3>
+                        <p id="modal-career" class="text-gray-700 text-xs"></p>
+                    </div>
+                    <div class="bg-yellow-50 p-3 rounded-2xl border border-yellow-100">
+                        <h3 class="text-yellow-600 font-bold mb-1 text-sm flex items-center gap-1">
+                            <span>💰</span> 財運
+                        </h3>
+                        <p id="modal-wealth" class="text-gray-700 text-xs"></p>
+                    </div>
+                </div>
+                
+                <div class="text-center pt-2">
+                    <p class="text-sm text-purple-500 font-bold">🍀 幸運物：<span id="modal-lucky"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁腳 -->
+    <footer class="mt-16 text-center text-sm text-gray-500 font-medium pb-8">
+        <p>充滿愛與魔法的星座運勢 🌙 僅供娛樂參考喔！</p>
+    </footer>
+
+    <script>
+        // 星座運勢資料 (可愛風文案)
+        const zodiacData = [
+            { id: 'aries', name: '牡羊座', emoji: '🐏', color: 'bg-red-50', border: 'border-red-200', textColors: 'text-red-500', date: '3/21 - 4/19', stars: 4, 
+              overall: '活力滿滿的一週！你就像一顆充飽電的小電池，遇到困難也能輕鬆跳過去。', love: '單身者有機會遇到熱情的對象，有伴者感情持續升溫！', career: '創意爆發，提案容易被看見！', wealth: '適合小額投資自己。', lucky: '草莓蛋糕 🍰' },
+            { id: 'taurus', name: '金牛座', emoji: '🐂', color: 'bg-green-50', border: 'border-green-200', textColors: 'text-green-600', date: '4/20 - 5/20', stars: 5, 
+              overall: '超級幸運星！這週適合慢慢來，享受生活中的小確幸，美食會帶來好心情。', love: '穩定中求進步，超適合安排一場浪漫的美食約會。', career: '按部就班，長官很滿意。', wealth: '會有意外的小紅包喔！', lucky: '柔軟的抱枕 🧸' },
+            { id: 'gemini', name: '雙子座', emoji: '👯', color: 'bg-yellow-50', border: 'border-yellow-200', textColors: 'text-yellow-600', date: '5/21 - 6/20', stars: 4, 
+              overall: '社交能量大開！會認識有趣的新朋友，你的幽默感讓大家都很喜歡跟你在一起。', love: '聊天頻率超合拍，曖昧指數直線上升！', career: '溝通順暢，合作愉快。', wealth: '多聽多看，有隱藏商機。', lucky: '彩色筆 🖍️' },
+            { id: 'cancer', name: '巨蟹座', emoji: '🦀', color: 'bg-gray-50', border: 'border-gray-200', textColors: 'text-gray-500', date: '6/21 - 7/22', stars: 3, 
+              overall: '心靈需要抱抱的一週。多花點時間在家裡，佈置一下房間，會讓你感到超級安心。', love: '溫柔體貼的小舉動，會讓對方超級心動喔。', career: '別給自己太大壓力。', wealth: '守財為主，避免衝動購物。', lucky: '熱牛奶 🥛' },
+            { id: 'leo', name: '獅子座', emoji: '🦁', color: 'bg-orange-50', border: 'border-orange-200', textColors: 'text-orange-500', date: '7/23 - 8/22', stars: 5, 
+              overall: '自帶蘋果光！走到哪都是焦點，自信是你這週最棒的武器，大膽展現自己吧！', love: '霸氣外露！你的魅力四射，讓人完全無法抵擋。', career: '展現領導力，獲得掌聲。', wealth: '正財運旺，努力有回報。', lucky: '亮片髮夾 ✨' },
+            { id: 'virgo', name: '處女座', emoji: '🧚‍♀️', color: 'bg-teal-50', border: 'border-teal-200', textColors: 'text-teal-600', date: '8/23 - 9/22', stars: 4, 
+              overall: '細心帶來好運！把周遭環境整理乾淨，不僅神清氣爽，還能找到遺失的小物。', love: '小細節大加分，貼心的舉動能瞬間融化對方的心。', career: '細節處理完美，零失誤。', wealth: '適合記帳，理財有方。', lucky: '香氛蠟燭 🕯️' },
+            { id: 'libra', name: '天秤座', emoji: '⚖️', color: 'bg-pink-50', border: 'border-pink-200', textColors: 'text-pink-500', date: '9/23 - 10/22', stars: 5, 
+              overall: '桃花朵朵開！不管是人緣還是愛情都超級好，每天都有人對你微笑。', love: '浪漫約會不可少，這週的桃花運實在超級旺！', career: '貴人相助，事半功倍。', wealth: '花錢打扮自己很值得。', lucky: '粉色馬卡龍 🍥' },
+            { id: 'scorpio', name: '天蠍座', emoji: '🦂', color: 'bg-purple-50', border: 'border-purple-200', textColors: 'text-purple-600', date: '10/23 - 11/21', stars: 4, 
+              overall: '直覺超敏銳！像是擁有讀心術一樣，能輕鬆察覺別人的需求，人際關係大加分。', love: '一個眼神交流就能傳遞愛意，神秘感滿分。', career: '專注力高，突破難關。', wealth: '偏財運佳，可買小彩券。', lucky: '神秘的水晶 🔮' },
+            { id: 'sagittarius', name: '射手座', emoji: '🏹', color: 'bg-blue-50', border: 'border-blue-200', textColors: 'text-blue-500', date: '11/22 - 12/21', stars: 4, 
+              overall: '想飛的心情擋不住！適合安排一場小旅行，或去沒去過的咖啡廳探險。', love: '一起去戶外走走吧！感情會在輕鬆玩樂中迅速增溫。', career: '靈活應變，點子很多。', wealth: '在旅遊或學習上花費較多。', lucky: '相機 📷' },
+            { id: 'capricorn', name: '摩羯座', emoji: '🐐', color: 'bg-stone-50', border: 'border-stone-200', textColors: 'text-stone-600', date: '12/22 - 1/19', stars: 3, 
+              overall: '默默耕耘會有驚喜收穫。這週雖然比較忙碌，但完成任務後的成就感會讓你很開心！', love: '雖然不擅長甜言蜜語，但實際行動會證明一切。', career: '穩紮穩打，受到肯定。', wealth: '適合長期儲蓄計畫。', lucky: '盆栽 🪴' },
+            { id: 'aquarius', name: '水瓶座', emoji: '🏺', color: 'bg-cyan-50', border: 'border-cyan-200', textColors: 'text-cyan-600', date: '1/20 - 2/18', stars: 4, 
+              overall: '腦洞大開的一週！充滿奇思妙想，快把這些有趣的靈感記錄下來吧。', love: '像好朋友般輕鬆愉快的相處，是感情長保新鮮的秘訣！', career: '打破常規，有意外好表現。', wealth: '可能有新奇的賺錢點子。', lucky: '造型便利貼 📝' },
+            { id: 'pisces', name: '雙魚座', emoji: '🐟', color: 'bg-indigo-50', border: 'border-indigo-200', textColors: 'text-indigo-500', date: '2/19 - 3/20', stars: 5, 
+              overall: '浪漫細胞大爆發！適合看愛情電影或追劇，生活充滿了粉紅泡泡。', love: '身邊充滿了粉紅泡泡，好好享受浪漫甜蜜的時光吧！', career: '想像力豐富，適合創作。', wealth: '別被可愛的東西騙走錢包。', lucky: '泡泡糖 🍬' }
+        ];
+
+        // 渲染星座卡片網格
+        const grid = document.getElementById('zodiac-grid');
+        
+        zodiacData.forEach((zodiac, index) => {
+            // 計算動畫延遲，產生錯落有致的漂浮感
+            const floatClass = index % 3 === 0 ? 'floating' : (index % 3 === 1 ? 'floating-delay-1' : 'floating-delay-2');
+            
+            const card = document.createElement('div');
+            card.className = `zodiac-card bg-white/80 backdrop-blur-md rounded-[2rem] p-6 border-2 ${zodiac.border} cursor-pointer flex flex-col items-center justify-center gap-3 relative overflow-hidden group`;
+            
+            card.innerHTML = `
+                <!-- 卡片背景裝飾圓 -->
+                <div class="absolute -top-6 -right-6 w-20 h-20 ${zodiac.color} rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
+                
+                <div class="text-5xl ${floatClass} drop-shadow-sm z-10 relative">
+                    ${zodiac.emoji}
+                </div>
+                <div class="text-center z-10">
+                    <h2 class="text-xl font-bold ${zodiac.textColors}">${zodiac.name}</h2>
+                    <p class="text-xs text-gray-400 font-medium">${zodiac.date}</p>
+                </div>
+                <div class="mt-2 px-3 py-1 bg-white rounded-full shadow-sm text-xs font-bold text-gray-500 z-10 border border-gray-100">
+                    點擊看運勢 👀
+                </div>
+            `;
+
+            // 綁定點擊事件開啟 Modal
+            card.addEventListener('click', () => openModal(zodiac));
+            grid.appendChild(card);
+        });
+
+        // Modal 相關邏輯
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalContent = document.getElementById('modal-content');
+        const closeModalBtn = document.getElementById('close-modal');
+
+        function openModal(data) {
+            // 填充資料
+            document.getElementById('modal-icon').innerText = data.emoji;
+            document.getElementById('modal-title').innerText = data.name;
+            document.getElementById('modal-date').innerText = data.date;
+            
+            // 處理星星
+            const starsContainer = document.getElementById('modal-stars');
+            starsContainer.innerHTML = '';
+            for(let i=0; i<5; i++) {
+                starsContainer.innerHTML += i < data.stars ? '★' : '☆';
+            }
+
+            document.getElementById('modal-overall').innerText = data.overall;
+            document.getElementById('modal-love').innerText = data.love;
+            document.getElementById('modal-career').innerText = data.career;
+            document.getElementById('modal-wealth').innerText = data.wealth;
+            document.getElementById('modal-lucky').innerText = data.lucky;
+
+            // 顯示 Modal 並加入動畫
+            modalOverlay.classList.remove('hidden');
+            modalContent.classList.remove('pop-in'); // Reset animation
+            // Trigger reflow to restart animation
+            void modalContent.offsetWidth; 
+            modalContent.classList.add('pop-in');
+        }
+
+        function closeModal() {
+            modalOverlay.classList.add('hidden');
+        }
+
+        // 綁定關閉事件
+        closeModalBtn.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

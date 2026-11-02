@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基隆至南投兩天一夜深度文化與尋味自由行</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 360px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#fdfbf7] text-stone-800 font-sans antialiased selection:bg-amber-200">
+
+<!-- Chosen Palette: Warm Earth & Sunken Lake Green (溫潤大地與深湖綠) -->
+<!-- Application Structure Plan: 本單頁應用程式（SPA）打破傳統線性報告格式，採用「視訊儀表板與模組化卡片」雙軌結構。頂部設有關鍵數據摘要與導覽選單；主體包含四大核心互動區塊：(1) 分日與全覽視角之時序時間軸，方便旅程中即時對照；(2) 可多重篩選與搜尋的地點導航矩陣，連結直接開啟 Google Maps；(3) 視覺化圖表與交通應變流向圖，強化時間配比與塞車風險控管；(4) 互動式預算與時間試算器，提升實用性與探索趣味。此設計旨在讓使用者在出發前及旅程中均能迅速定位資訊、權衡決策並享受沉浸式閱覽體驗。 -->
+<!-- Visualization & Content Choices: 1. 行程體驗類別配比 -> Goal: Inform/Compare -> Chart.js 雷達圖 (Canvas) -> 讓使用者清晰掌握文化、美食、咖啡與自然的分配平衡 -> 絕無使用 SVG/Mermaid。 2. 景點評價與消費規範比較 -> Goal: Compare/Organize -> Chart.js 橫向柱狀圖 (Canvas) -> 直觀展現各站評價與低消門檻。 3. 國道動線塞車風險應變 -> Goal: Organize/Change -> HTML/CSS 步驟結構與動態按鈕切換 -> 呈現霧峰系統至東草屯替代道路方案。 4. 動態費用預算計算器 -> Goal: Interactive Calculation -> JS 動態數據綁定 -> 計算人均費用與各項開支占比。 -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <nav class="sticky top-0 z-50 bg-stone-900/90 backdrop-blur-md text-stone-100 border-b border-stone-800 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">🧭</span>
+                    <span class="font-bold text-lg sm:text-xl tracking-wide text-amber-400">基隆 ➔ 南投兩日遊</span>
+                </div>
+                <div class="hidden md:flex space-x-6 text-sm font-medium">
+                    <a href="#overview" class="hover:text-amber-400 transition-colors">行程總覽</a>
+                    <a href="#timeline" class="hover:text-amber-400 transition-colors">時序行程</a>
+                    <a href="#spots" class="hover:text-amber-400 transition-colors">景點與地圖</a>
+                    <a href="#traffic" class="hover:text-amber-400 transition-colors">交通動線</a>
+                    <a href="#insights" class="hover:text-amber-400 transition-colors">文化解析</a>
+                    <a href="#calculator" class="hover:text-amber-400 transition-colors">費用試算</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 rounded-md text-stone-300 hover:text-white hover:bg-stone-800 focus:outline-none">
+                        ☰
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-stone-900 border-b border-stone-800 px-4 pt-2 pb-4 space-y-2 text-sm">
+            <a href="#overview" class="block py-2 text-stone-200 hover:text-amber-400">行程總覽</a>
+            <a href="#timeline" class="block py-2 text-stone-200 hover:text-amber-400">時序行程</a>
+            <a href="#spots" class="block py-2 text-stone-200 hover:text-amber-400">景點與地圖</a>
+            <a href="#traffic" class="block py-2 text-stone-200 hover:text-amber-400">交通動線</a>
+            <a href="#insights" class="block py-2 text-stone-200 hover:text-amber-400">文化解析</a>
+            <a href="#calculator" class="block py-2 text-stone-200 hover:text-amber-400">費用試算</a>
+        </div>
+    </nav>
+
+    <header id="overview" class="relative bg-gradient-to-b from-stone-900 via-stone-800 to-emerald-950 text-white py-16 px-4 sm:px-6 lg:px-8 shadow-inner">
+        <div class="max-w-5xl mx-auto text-center space-y-6">
+            <div class="inline-flex items-center space-x-2 bg-emerald-900/60 border border-emerald-500/40 px-4 py-1.5 rounded-full text-xs sm:text-sm text-emerald-200 font-semibold uppercase tracking-wider">
+                <span>🌲 深度文化與尋味自由行指南</span>
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-stone-100">
+                山城紙藝 ‧ 湖畔茶香 ‧ 森林咖啡
+            </h1>
+            <p class="text-stone-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+                本應用程式專為從基隆出發前往南投的旅人規劃。融合埔里紙藝工藝、中台佛教藝術、魚池高山茶與精品咖啡，以及車埕木業歷史，輔以精確的交通避堵指引與直接地圖導航。
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 max-w-4xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/10 text-center">
+                    <div class="text-2xl mb-1">🚗</div>
+                    <div class="text-xs text-stone-300">總行車距離</div>
+                    <div class="text-lg font-bold text-amber-300">單程約 240 km</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/10 text-center">
+                    <div class="text-2xl mb-1">📍</div>
+                    <div class="text-xs text-stone-300">核心景點與美食</div>
+                    <div class="text-lg font-bold text-amber-300">12 處精選地標</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/10 text-center">
+                    <div class="text-2xl mb-1">🍵</div>
+                    <div class="text-xs text-stone-300">主要體驗主軸</div>
+                    <div class="text-lg font-bold text-amber-300">文化/美食/咖啡</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/10 text-center">
+                    <div class="text-2xl mb-1">🌙</div>
+                    <div class="text-xs text-stone-300">建議住宿區域</div>
+                    <div class="text-lg font-bold text-amber-300">日月潭伊達邵</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+        <section id="timeline" class="space-y-6">
+            <div class="border-l-4 border-emerald-700 pl-4">
+                <h2 class="text-2xl sm:text-3xl font-bold text-stone-900">🗓️ 兩天一夜時序行程規劃</h2>
+                <p class="text-stone-600 text-sm sm:text-base mt-1">本區塊將行程依時間軸展開，呈現各時間點的空間轉移、體驗重點與關鍵規範。您可透過下方按鈕切換檢視單日或全覽。</p>
+            </div>
+
+            <div class="flex flex-wrap gap-3 items-center justify-between bg-stone-100 p-2 rounded-xl border border-stone-200">
+                <div class="flex space-x-2">
+                    <button onclick="filterTimeline('all')" id="btn-tl-all" class="tl-btn active px-4 py-2 text-sm font-semibold rounded-lg bg-emerald-800 text-white shadow-sm transition-all">全覽行程</button>
+                    <button onclick="filterTimeline('day1')" id="btn-tl-day1" class="tl-btn px-4 py-2 text-sm font-semibold rounded-lg bg-white text-stone-700 hover:bg-stone-200 transition-all">第一日：埔里與伊達邵</button>
+                    <button onclick="filterTimeline('day2')" id="btn-tl-day2" class="tl-btn px-4 py-2 text-sm font-semibold rounded-lg bg-white text-stone-700 hover:bg-stone-200 transition-all">第二日：向山、茶香與車埕</button>
+                </div>
+                <span class="text-xs text-stone-500 font-medium px-2">💡 點選景點卡片可查看地圖導航</span>
+            </div>
+
+            <div id="timeline-container" class="space-y-6 relative before:absolute before:inset-0 before:left-4 sm:before:left-1/2 before:-ml-px before:w-0.5 before:bg-stone-300">
+
+                <div class="timeline-item day1 relative flex flex-col sm:flex-row items-start group">
+                    <div class="flex items-center sm:w-1/2 sm:justify-end sm:pr-8 mb-2 sm:mb-0">
+                        <div class="bg-amber-100 text-amber-900 border border-amber-300 font-bold px-3 py-1 rounded-full text-xs">Day 1 ‧ 06:30 - 09:30</div>
+                    </div>
+                    <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-emerald-700 border-4 border-white shadow"></div>
+                    <div class="ml-10 sm:ml-0 sm:w-1/2 sm:pl-8">
+                        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-100 text-blue-800 mb-2 inline-block">交通動線</span>
+                            <h3 class="font-bold text-lg text-stone-900">基隆出發 ➔ 國道南下 ➔ 埔里</h3>
+                            <p class="text-stone-600 text-sm mt-2">建議於上午07:00前由基隆出發，經國一/國三於霧峰系統轉國道六號。若逢國六塞車，可改走台14線中潭公路。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item day1 relative flex flex-col sm:flex-row items-start group">
+                    <div class="flex items-center sm:w-1/2 sm:justify-end sm:pr-8 mb-2 sm:mb-0">
+                        <div class="bg-amber-100 text-amber-900 border border-amber-300 font-bold px-3 py-1 rounded-full text-xs">Day 1 ‧ 09:30 - 11:30</div>
+                    </div>
+                    <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-emerald-700 border-4 border-white shadow"></div>
+                    <div class="ml-10 sm:ml-0 sm:w-1/2 sm:pl-8">
+                        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex justify-between items-start">
+                                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-100 text-amber-800 mb-2 inline-block">文化體驗 ‧ 手工紙</span>
+                                <span class="text-xs text-stone-500">門票 $50 (可折抵)</span>
+                            </div>
+                            <h3 class="font-bold text-lg text-stone-900">廣興紙寮</h3>
+                            <p class="text-stone-600 text-sm mt-2">台灣第一家造紙觀光工廠，深入了解傳統抄紙、壓紙與烘紙工序，體驗手作紙藝拓印。</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=廣興紙寮+南投縣埔里鎮鐵山路310號" target="_blank" class="inline-flex items-center text-xs font-bold text-emerald-700 hover:underline mt-3">📍 開啟地圖導航 ➔</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item day1 relative flex flex-col sm:flex-row items-start group">
+                    <div class="flex items-center sm:w-1/2 sm:justify-end sm:pr-8 mb-2 sm:mb-0">
+                        <div class="bg-amber-100 text-amber-900 border border-amber-300 font-bold px-3 py-1 rounded-full text-xs">Day 1 ‧ 11:40 - 13:00</div>
+                    </div>
+                    <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-emerald-700 border-4 border-white shadow"></div>
+                    <div class="ml-10 sm:ml-0 sm:w-1/2 sm:pl-8">
+                        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-orange-100 text-orange-800 mb-2 inline-block">在地美食</span>
+                            <h3 class="font-bold text-lg text-stone-900">埔里市區尋味 (菊肉圓 / 振松記米粉)</h3>
+                            <p class="text-stone-600 text-sm mt-2">體驗「菊肉圓」特有的「一圓二吃」（留肉餡沖大骨高湯），或品嚐「振松記」粗米粉搭配綿密巨大芋頭湯。</p>
+                            <div class="flex space-x-3 mt-3">
+                                <a href="https://www.google.com/maps/search/?api=1&query=菊肉圓+南投縣埔里鎮西安路一段33號" target="_blank" class="text-xs font-bold text-emerald-700 hover:underline">📍 菊肉圓導航</a>
+                                <a href="https://www.google.com/maps/search/?api=1&query=振松記米粉+南投縣埔里鎮中山路三段215號" target="_blank" class="text-xs font-bold text-emerald-700 hover:underline">📍 振松記導航</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item day1 relative flex flex-col sm:flex-row items-start group">
+                    <div class="flex items-center sm:w-1/2 sm:justify-end sm:pr-8 mb-2 sm:mb-0">
+                        <div class="bg-amber-100 text-amber-900 border border-amber-300 font-bold px-3 py-1 rounded-full text-xs">Day 1 ‧ 13:30 - 15:30</div>
+                    </div>
+                    <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-emerald-700 border-4 border-white shadow"></div>
+                    <div class="ml-10 sm:ml-0 sm:w-1/2 sm:pl-8">
+                        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex justify-between items-start">
+                                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-purple-100 text-purple-800 mb-2 inline-block">宗教藝術 ‧ 建築</span>
+                                <span class="text-xs text-stone-500">全票 $200</span>
+                            </div>
+                            <h3 class="font-bold text-lg text-stone-900">中台世界博物館</h3>
+                            <p class="text-stone-600 text-sm mt-2">台灣佛教藝術羅浮宮，展示唐風建築語彙、歷代佛像雕刻與名家書法碑林拓片。</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=中台世界博物館+南投縣埔里鎮中台路8號" target="_blank" class="inline-flex items-center text-xs font-bold text-emerald-700 hover:underline mt-3">📍 開啟地圖導航 ➔</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item day1 relative flex flex-col sm:flex-row items-start group">
+                    <div class="flex items-center sm:w-1/2 sm:justify-end sm:pr-8 mb-2 sm:mb-0">
+                        <div class="bg-amber-100 text-amber-900 border border-amber-300 font-bold px-3 py-1 rounded-full text-xs">Day 1 ‧ 16:00 - 17:30</div>
+                    </div>
+                    <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-emerald-700 border-4 border-white shadow"></div>
+                    <div class="ml-10 sm:ml-0 sm:w-1/2 sm:pl-8">
+                        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex justify-between items-start">
+                                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 mb-2 inline-block">特色咖啡 ‧ 美學</span>
+                                <span class="text-xs text-stone-500">低消 $100+10%</span>
+                            </div>
+                            <h3 class="font-bold text-lg text-stone-900">蠻荒咖啡 Desolate Coffee</h3>
+                            <p class="text-stone-600 text-sm mt-2">台21線純白木造玻璃屋，山林綠意穿透空間。由世界烘豆賽季軍團隊親自打造精品手沖。</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=蠻荒咖啡+南投縣魚池鄉文化巷41號" target="_blank" class="inline-flex items-center text-xs font-bold text-emerald-700 hover:underline mt-3">📍 開啟地圖導航 ➔</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item day1 relative flex flex-col sm:flex-row items-start group">
+                    <div class="flex items-center sm:w-1/2 sm:justify-end sm:pr-8 mb-2 sm:mb-0">
+                        <div class="bg-amber-100 text-amber-900 border border-amber-300 font-bold px-3 py-1 rounded-full text-xs">Day 1 ‧ 18:00 - 21:00</div>
+                    </div>
+                    <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-emerald-700 border-4 border-white shadow"></div>
+                    <div class="ml-10 sm:ml-0 sm:w-1/2 sm:pl-8">
+                        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-rose-100 text-rose-800 mb-2 inline-block">夜間巡禮 ‧ 住宿</span>
+                            <h3 class="font-bold text-lg text-stone-900">伊達邵老街掃街 ➔ 湖景旅宿入住</h3>
+                            <p class="text-stone-600 text-sm mt-2">品嚐年記香菇高麗菜包、東東茶池刈包、總統魚酥捲與杜啦白鰻棍。推薦入住湖悅或明月湖等湖岸第一排旅宿。</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=伊達邵老街+南投縣魚池鄉義勇街" target="_blank" class="inline-flex items-center text-xs font-bold text-emerald-700 hover:underline mt-3">📍 伊達邵老街導航 ➔</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item day2 relative flex flex-col sm:flex-row items-start group">
+                    <div class="flex items-center sm:w-1/2 sm:justify-end sm:pr-8 mb-2 sm:mb-0">
+                        <div class="bg-emerald-100 text-emerald-900 border border-emerald-300 font-bold px-3 py-1 rounded-full text-xs">Day 2 ‧ 08:30 - 10:00</div>
+                    </div>
+                    <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-amber-600 border-4 border-white shadow"></div>
+                    <div class="ml-10 sm:ml-0 sm:w-1/2 sm:pl-8">
+                        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-100 text-blue-800 mb-2 inline-block">地景建築 ‧ 日月潭</span>
+                            <h3 class="font-bold text-lg text-stone-900">向山行政暨遊客中心</h3>
+                            <p class="text-stone-600 text-sm mt-2">日本團紀彥建築師打造的清水模藝術品，延伸無邊際水池與懸臂觀景台，清晨享受靜謐湖光。</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=向山行政暨遊客中心+南投縣魚池鄉中山路599號" target="_blank" class="inline-flex items-center text-xs font-bold text-emerald-700 hover:underline mt-3">📍 開啟地圖導航 ➔</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item day2 relative flex flex-col sm:flex-row items-start group">
+                    <div class="flex items-center sm:w-1/2 sm:justify-end sm:pr-8 mb-2 sm:mb-0">
+                        <div class="bg-emerald-100 text-emerald-900 border border-emerald-300 font-bold px-3 py-1 rounded-full text-xs">Day 2 ‧ 10:15 - 11:30</div>
+                    </div>
+                    <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-amber-600 border-4 border-white shadow"></div>
+                    <div class="ml-10 sm:ml-0 sm:w-1/2 sm:pl-8">
+                        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 mb-2 inline-block">紅茶產業 ‧ 文化</span>
+                            <h3 class="font-bold text-lg text-stone-900">Hohocha 喝喝茶 / 日月老茶廠</h3>
+                            <p class="text-stone-600 text-sm mt-2">探尋魚池鄉阿薩姆與紅玉紅茶歷史，體驗日式極簡奉茶文化與古董製茶設備巡禮。</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=喝喝茶+南投縣魚池鄉魚池街443-36號" target="_blank" class="inline-flex items-center text-xs font-bold text-emerald-700 hover:underline mt-3">📍 喝喝茶導航 ➔</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item day2 relative flex flex-col sm:flex-row items-start group">
+                    <div class="flex items-center sm:w-1/2 sm:justify-end sm:pr-8 mb-2 sm:mb-0">
+                        <div class="bg-emerald-100 text-emerald-900 border border-emerald-300 font-bold px-3 py-1 rounded-full text-xs">Day 2 ‧ 11:45 - 13:00</div>
+                    </div>
+                    <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-amber-600 border-4 border-white shadow"></div>
+                    <div class="ml-10 sm:ml-0 sm:w-1/2 sm:pl-8">
+                        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex justify-between items-start">
+                                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-teal-100 text-teal-800 mb-2 inline-block">莊園咖啡 ‧ 絕景</span>
+                                <span class="text-xs text-stone-500">低消 $120</span>
+                            </div>
+                            <h3 class="font-bold text-lg text-stone-900">鹿篙咖啡莊園</h3>
+                            <p class="text-stone-600 text-sm mt-2">漫步茶園木棧步道抵達山丘頂端，於懸臂觀景台俯瞰綿延梯田，品飲在地自栽自烘精品咖啡。</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=鹿篙咖啡莊園+南投縣魚池鄉香茶巷31-6號" target="_blank" class="inline-flex items-center text-xs font-bold text-emerald-700 hover:underline mt-3">📍 開啟地圖導航 ➔</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item day2 relative flex flex-col sm:flex-row items-start group">
+                    <div class="flex items-center sm:w-1/2 sm:justify-end sm:pr-8 mb-2 sm:mb-0">
+                        <div class="bg-emerald-100 text-emerald-900 border border-emerald-300 font-bold px-3 py-1 rounded-full text-xs">Day 2 ‧ 13:15 - 14:30</div>
+                    </div>
+                    <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-amber-600 border-4 border-white shadow"></div>
+                    <div class="ml-10 sm:ml-0 sm:w-1/2 sm:pl-8">
+                        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-orange-100 text-orange-800 mb-2 inline-block">風味午餐</span>
+                            <h3 class="font-bold text-lg text-stone-900">祥喜餐廳</h3>
+                            <p class="text-stone-600 text-sm mt-2">深受饕客喜愛的道地山產店。必點清蒸奇力魚、清脆檳榔花（半天花）與香氣濃郁的刺蔥葉炒蛋。</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=祥喜餐廳+南投縣魚池鄉中山路126號" target="_blank" class="inline-flex items-center text-xs font-bold text-emerald-700 hover:underline mt-3">📍 開啟地圖導航 ➔</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item day2 relative flex flex-col sm:flex-row items-start group">
+                    <div class="flex items-center sm:w-1/2 sm:justify-end sm:pr-8 mb-2 sm:mb-0">
+                        <div class="bg-emerald-100 text-emerald-900 border border-emerald-300 font-bold px-3 py-1 rounded-full text-xs">Day 2 ‧ 15:00 - 16:30</div>
+                    </div>
+                    <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-amber-600 border-4 border-white shadow"></div>
+                    <div class="ml-10 sm:ml-0 sm:w-1/2 sm:pl-8">
+                        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-100 text-amber-800 mb-2 inline-block">林業歷史 ‧ 聚落</span>
+                            <h3 class="font-bold text-lg text-stone-900">車埕木業展示館與老街</h3>
+                            <p class="text-stone-600 text-sm mt-2">漫步山城日式聚落，探索舊廠房改造的木構造展館，感受集集鐵路終點站的昔日采風。</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=車埕木業展示館+南投縣水里鄉民權巷" target="_blank" class="inline-flex items-center text-xs font-bold text-emerald-700 hover:underline mt-3">📍 開啟地圖導航 ➔</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item day2 relative flex flex-col sm:flex-row items-start group">
+                    <div class="flex items-center sm:w-1/2 sm:justify-end sm:pr-8 mb-2 sm:mb-0">
+                        <div class="bg-emerald-100 text-emerald-900 border border-emerald-300 font-bold px-3 py-1 rounded-full text-xs">Day 2 ‧ 16:30 - 18:00</div>
+                    </div>
+                    <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-amber-600 border-4 border-white shadow"></div>
+                    <div class="ml-10 sm:ml-0 sm:w-1/2 sm:pl-8">
+                        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex justify-between items-start">
+                                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 mb-2 inline-block">湖畔茶屋 ‧ 壓軸</span>
+                                <span class="text-xs text-stone-500">和室低消 $300-350</span>
+                            </div>
+                            <h3 class="font-bold text-lg text-stone-900">隱茶 STEAM</h3>
+                            <p class="text-stone-600 text-sm mt-2">位於貯木池畔的日式古蹟招待所。靜和室三面環湖，品飲高山茶與精緻茶點，為旅程完美沉澱。</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=隱茶+南投縣水里鄉民權巷101-3號" target="_blank" class="inline-flex items-center text-xs font-bold text-emerald-700 hover:underline mt-3">📍 開啟地圖導航 ➔</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="spots" class="space-y-6">
+            <div class="border-l-4 border-amber-600 pl-4">
+                <h2 class="text-2xl sm:text-3xl font-bold text-stone-900">📍 景點、美食與咖啡館矩陣指南</h2>
+                <p class="text-stone-600 text-sm sm:text-base mt-1">整合所有場域的營業時間、公休日、消費規範與 Google Maps 精確連結。可使用下方標籤進行篩選。</p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 pb-2">
+                <button onclick="filterSpots('all')" class="spot-filter active px-3 py-1.5 text-xs font-semibold rounded-full bg-stone-800 text-white shadow-sm">全部顯示</button>
+                <button onclick="filterSpots('culture')" class="spot-filter px-3 py-1.5 text-xs font-semibold rounded-full bg-stone-200 text-stone-700 hover:bg-stone-300">🏛️ 文化景點</button>
+                <button onclick="filterSpots('cafe')" class="spot-filter px-3 py-1.5 text-xs font-semibold rounded-full bg-stone-200 text-stone-700 hover:bg-stone-300">☕ 特色咖啡與茶館</button>
+                <button onclick="filterSpots('food')" class="spot-filter px-3 py-1.5 text-xs font-semibold rounded-full bg-stone-200 text-stone-700 hover:bg-stone-300">🍜 在地美食</button>
+            </div>
+
+            <div id="spots-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="spot-card culture bg-white p-6 rounded-2xl border border-stone-200 flex flex-col justify-between hover:shadow-lg transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2 py-1 rounded">廣興紙寮</span>
+                            <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">門票 $50</span>
+                        </div>
+                        <p class="text-stone-600 text-xs mb-3">🕒 09:00 - 17:00 (無固定公休)</p>
+                        <p class="text-stone-700 text-sm mb-4">全台第一家造紙觀光工廠，門票可全額折抵消費並附專業導覽。深刻體驗台灣傳統抄紙與手工紙美學。</p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=廣興紙寮+南投縣埔里鎮鐵山路310號" target="_blank" class="w-full text-center py-2 bg-stone-100 hover:bg-stone-200 text-stone-800 font-semibold text-xs rounded-xl transition-colors">🗺️ Google Maps 導航</a>
+                </div>
+
+                <div class="spot-card food bg-white p-6 rounded-2xl border border-stone-200 flex flex-col justify-between hover:shadow-lg transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-orange-700 bg-orange-50 px-2 py-1 rounded">菊肉圓</span>
+                            <span class="text-xs font-semibold text-amber-600">⭐ 4.4 顆星</span>
+                        </div>
+                        <p class="text-stone-600 text-xs mb-3">🕒 11:30 - 17:00 (週二公休)</p>
+                        <p class="text-stone-700 text-sm mb-4">埔里經典排隊美食，必須體驗「一圓二吃」：先嚐皮與內餡，再加入特製大骨高湯與醬汁完美融合。</p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=菊肉圓+南投縣埔里鎮西安路一段33號" target="_blank" class="w-full text-center py-2 bg-stone-100 hover:bg-stone-200 text-stone-800 font-semibold text-xs rounded-xl transition-colors">🗺️ Google Maps 導航</a>
+                </div>
+
+                <div class="spot-card food bg-white p-6 rounded-2xl border border-stone-200 flex flex-col justify-between hover:shadow-lg transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-orange-700 bg-orange-50 px-2 py-1 rounded">振松記米粉</span>
+                            <span class="text-xs font-semibold text-amber-600">⭐ 3.8 顆星</span>
+                        </div>
+                        <p class="text-stone-600 text-xs mb-3">🕒 10:30 - 16:00 (週三公休)</p>
+                        <p class="text-stone-700 text-sm mb-4">70年老店，地位超凡。招牌芋頭米粉湯包含大塊綿密芋頭與透白粗米粉，湯頭鮮甜濃郁。</p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=振松記米粉+南投縣埔里鎮中山路三段215號" target="_blank" class="w-full text-center py-2 bg-stone-100 hover:bg-stone-200 text-stone-800 font-semibold text-xs rounded-xl transition-colors">🗺️ Google Maps 導航</a>
+                </div>
+
+                <div class="spot-card culture bg-white p-6 rounded-2xl border border-stone-200 flex flex-col justify-between hover:shadow-lg transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-purple-700 bg-purple-50 px-2 py-1 rounded">中台世界博物館</span>
+                            <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">門票 $200</span>
+                        </div>
+                        <p class="text-stone-600 text-xs mb-3">🕒 09:00 - 17:00 (週一休館)</p>
+                        <p class="text-stone-700 text-sm mb-4">被譽為台灣佛教藝術羅浮宮，依山而建仿唐長安城，收藏豐富的佛像造像與王羲之、顏真卿拓片。</p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=中台世界博物館+南投縣埔里鎮中台路8號" target="_blank" class="w-full text-center py-2 bg-stone-100 hover:bg-stone-200 text-stone-800 font-semibold text-xs rounded-xl transition-colors">🗺️ Google Maps 導航</a>
+                </div>
+
+                <div class="spot-card cafe bg-white p-6 rounded-2xl border border-stone-200 flex flex-col justify-between hover:shadow-lg transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-1 rounded">蠻荒咖啡 Desolate Coffee</span>
+                            <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">低消 $100+10%</span>
+                        </div>
+                        <p class="text-stone-600 text-xs mb-3">🕒 10:00 - 18:00 (現場候位)</p>
+                        <p class="text-stone-700 text-sm mb-4">純白木造森林系玻璃屋，空間穿透感極佳。世界烘豆賽季軍團隊親自操刀單品手沖與精緻甜點。</p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=蠻荒咖啡+南投縣魚池鄉文化巷41號" target="_blank" class="w-full text-center py-2 bg-stone-100 hover:bg-stone-200 text-stone-800 font-semibold text-xs rounded-xl transition-colors">🗺️ Google Maps 導航</a>
+                </div>
+
+                <div class="spot-card culture bg-white p-6 rounded-2xl border border-stone-200 flex flex-col justify-between hover:shadow-lg transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded">向山遊客中心</span>
+                            <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">免費參觀</span>
+                        </div>
+                        <p class="text-stone-600 text-xs mb-3">🕒 09:00 - 17:00 (戶外24H)</p>
+                        <p class="text-stone-700 text-sm mb-4">日本建築師團紀彥清水模傑作。無邊際水池銜接日月潭湖景，並設有懸臂式觀景台。</p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=向山行政暨遊客中心+南投縣魚池鄉中山路599號" target="_blank" class="w-full text-center py-2 bg-stone-100 hover:bg-stone-200 text-stone-800 font-semibold text-xs rounded-xl transition-colors">🗺️ Google Maps 導航</a>
+                </div>
+
+                <div class="spot-card cafe bg-white p-6 rounded-2xl border border-stone-200 flex flex-col justify-between hover:shadow-lg transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-teal-700 bg-teal-50 px-2 py-1 rounded">Hohocha 喝喝茶</span>
+                            <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">含奉茶體驗</span>
+                        </div>
+                        <p class="text-stone-600 text-xs mb-3">🕒 09:00 - 17:20 (假日至17:50)</p>
+                        <p class="text-stone-700 text-sm mb-4">日式極簡木質空間，體驗紅玉紅茶與紅茶滷蛋奉茶文化，展示茶葉栽培至烘焙的完整歷程。</p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=喝喝茶+南投縣魚池鄉魚池街443-36號" target="_blank" class="w-full text-center py-2 bg-stone-100 hover:bg-stone-200 text-stone-800 font-semibold text-xs rounded-xl transition-colors">🗺️ Google Maps 導航</a>
+                </div>
+
+                <div class="spot-card cafe bg-white p-6 rounded-2xl border border-stone-200 flex flex-col justify-between hover:shadow-lg transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-1 rounded">鹿篙咖啡莊園</span>
+                            <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">低消 $120</span>
+                        </div>
+                        <p class="text-stone-600 text-xs mb-3">🕒 09:00 - 17:00 (無預約)</p>
+                        <p class="text-stone-700 text-sm mb-4">位於海拔700公尺群山間，穿過茶園木棧道抵達，懸臂觀景台俯瞰梯田，享受自栽自烘精品咖啡。</p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=鹿篙咖啡莊園+南投縣魚池鄉香茶巷31-6號" target="_blank" class="w-full text-center py-2 bg-stone-100 hover:bg-stone-200 text-stone-800 font-semibold text-xs rounded-xl transition-colors">🗺️ Google Maps 導航</a>
+                </div>
+
+                <div class="spot-card food bg-white p-6 rounded-2xl border border-stone-200 flex flex-col justify-between hover:shadow-lg transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-orange-700 bg-orange-50 px-2 py-1 rounded">祥喜餐廳</span>
+                            <span class="text-xs font-semibold text-stone-500">平價熱炒山產</span>
+                        </div>
+                        <p class="text-stone-600 text-xs mb-3">🕒 11:00-14:00, 17:00-20:00 (週三休)</p>
+                        <p class="text-stone-700 text-sm mb-4">在地人推崇的台式山產店。必點酥炸奇力魚、清炒半天花（檳榔花）與香氣撲鼻的刺蔥葉炒蛋。</p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=祥喜餐廳+南投縣魚池鄉中山路126號" target="_blank" class="w-full text-center py-2 bg-stone-100 hover:bg-stone-200 text-stone-800 font-semibold text-xs rounded-xl transition-colors">🗺️ Google Maps 導航</a>
+                </div>
+
+                <div class="spot-card culture bg-white p-6 rounded-2xl border border-stone-200 flex flex-col justify-between hover:shadow-lg transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2 py-1 rounded">車埕木業展示館</span>
+                            <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">免費參觀</span>
+                        </div>
+                        <p class="text-stone-600 text-xs mb-3">🕒 09:30 - 17:00 (假日至17:30)</p>
+                        <p class="text-stone-700 text-sm mb-4">重現昔日南投林業榮景與集集支線歷史，極具設計感的木構造建築，並提供手作木工體驗。</p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=車埕木業展示館+南投縣水里鄉民權巷" target="_blank" class="w-full text-center py-2 bg-stone-100 hover:bg-stone-200 text-stone-800 font-semibold text-xs rounded-xl transition-colors">🗺️ Google Maps 導航</a>
+                </div>
+
+                <div class="spot-card cafe bg-white p-6 rounded-2xl border border-stone-200 flex flex-col justify-between hover:shadow-lg transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-teal-700 bg-teal-50 px-2 py-1 rounded">隱茶 STEAM</span>
+                            <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">低消 $200-350</span>
+                        </div>
+                        <p class="text-stone-600 text-xs mb-3">🕒 10:00 - 17:00 (週二公休)</p>
+                        <p class="text-stone-700 text-sm mb-4">貯木池畔的日式湖畔茶屋，歷史活化典型範例。靜和室區三面臨水，享用精緻高山茶與精緻茶點。</p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=隱茶+南投縣水里鄉民權巷101-3號" target="_blank" class="w-full text-center py-2 bg-stone-100 hover:bg-stone-200 text-stone-800 font-semibold text-xs rounded-xl transition-colors">🗺️ Google Maps 導航</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="bg-stone-100 p-6 sm:p-8 rounded-3xl border border-stone-200 space-y-8">
+            <div class="border-l-4 border-emerald-800 pl-4">
+                <h2 class="text-2xl sm:text-3xl font-bold text-stone-900">📊 數據視角：時間與費用配比分析</h2>
+                <p class="text-stone-600 text-sm sm:text-base mt-1">透過數據圖表呈現本行程在「體驗類型時間權重」與「景點評價與最低消費」的結構分配。</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm flex flex-col items-center">
+                    <h3 class="text-base font-bold text-stone-800 mb-4">行程體驗類型時間權重 (雷達圖)</h3>
+                    <div class="chart-container">
+                        <canvas id="typeChart"></canvas>
+                    </div>
+                    <p class="text-xs text-stone-500 mt-3 text-center">本行程兼顧文化知性、茶咖放鬆與自然景致，避免單一類型造成的疲乏感。</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm flex flex-col items-center">
+                    <h3 class="text-base font-bold text-stone-800 mb-4">精選地標最低消費門檻 (元)</h3>
+                    <div class="chart-container">
+                        <canvas id="costChart"></canvas>
+                    </div>
+                    <p class="text-xs text-stone-500 mt-3 text-center">門票與低消多數落在 100~350 元之間，並包含折抵或茶飲體驗，CP值極高。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="traffic" class="space-y-6">
+            <div class="border-l-4 border-blue-600 pl-4">
+                <h2 class="text-2xl sm:text-3xl font-bold text-stone-900">🚗 交通風險控管與替代動線</h2>
+                <p class="text-stone-600 text-sm sm:text-base mt-1">基隆至南投跨度極大，週末或連假期間國道六號易發生壅塞。本區塊提供即時策略提示。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-stone-200 space-y-3">
+                    <div class="text-amber-600 font-bold text-sm">💡 時間窗口建議</div>
+                    <h3 class="font-bold text-stone-900">去程避塞關鍵</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        強烈建議於第一天<strong>上午 07:00 前</strong>自基隆出發。避開 08:00 - 10:00 國道三號銜接國道六號的南下高峰時段。
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-stone-200 space-y-3">
+                    <div class="text-emerald-700 font-bold text-sm">🛣️ 替代道路指引</div>
+                    <h3 class="font-bold text-stone-900">國道六號回堵方案</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        若國六霧峰系統回堵，可於國三霧峰交流道提前匯出接台3線，或於東草屯交流道下國六，改走<strong>台14線 (中潭公路)</strong> 直達埔里。
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-stone-200 space-y-3">
+                    <div class="text-purple-700 font-bold text-sm">🅿️ 停車策略</div>
+                    <h3 class="font-bold text-stone-900">伊達邵與熱門景點</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        伊達邵碼頭假日計時收費且位少，建議入住附設專屬停車位之湖景民宿，車輛停妥後以徒步或自行車慢遊。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="insights" class="space-y-6">
+            <div class="border-l-4 border-purple-700 pl-4">
+                <h2 class="text-2xl sm:text-3xl font-bold text-stone-900">🧠 深度解析：南投觀光轉型三大趨勢</h2>
+                <p class="text-stone-600 text-sm sm:text-base mt-1">分析行程景點背後的轉型邏輯，理解這趟旅遊中的產業、建築與美學脈絡。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-stone-200 space-y-4 shadow-sm hover:border-purple-300 transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-lg">1</div>
+                    <h3 class="font-bold text-lg text-stone-900">產業遺址活化與美學再詮釋</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        廣興紙寮、車埕木業展示館與隱茶STEAM，代表昔日造紙業與伐木業的轉型。透過木構造工藝、展演體驗與古蹟茶席，將衰退工業遺址賦予高附加價值的文化體驗。
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-stone-200 space-y-4 shadow-sm hover:border-purple-300 transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center font-bold text-lg">2</div>
+                    <h3 class="font-bold text-lg text-stone-900">建築語彙作為觀光核心催化劑</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        中台博物館的仿唐城池、向山遊客中心的清水模無邊際水池、蠻荒咖啡的純白玻璃屋，均以強烈的視覺幾何與環境融合設計，讓建築本身成為旅行的目的地。
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-stone-200 space-y-4 shadow-sm hover:border-purple-300 transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-lg">3</div>
+                    <h3 class="font-bold text-lg text-stone-900">農業精品化與儀式感建立</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        鹿篙咖啡莊園與Hohocha喝喝茶將茶葉與咖啡栽種精品化。透過穿越茶園木棧道、懸臂觀景台與日式奉茶文化，建立消費者對風土食材的敬意與極致感官饗宴。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculator" class="bg-stone-900 text-stone-100 p-6 sm:p-10 rounded-3xl shadow-xl space-y-8">
+            <div class="border-l-4 border-amber-400 pl-4">
+                <h2 class="text-2xl sm:text-3xl font-bold text-stone-100">💰 兩天一夜行程費用預算動態估算器</h2>
+                <p class="text-stone-400 text-sm sm:text-base mt-1">自由調整旅客人數與住宿選擇，即時試算預期支出與人均費用。</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="space-y-6 lg:col-span-1">
+                    <div>
+                        <label class="block text-sm font-semibold text-stone-300 mb-2">👥 同行旅客人數：<span id="people-count-label" class="text-amber-400 font-bold">2</span> 人</label>
+                        <input type="range" id="people-range" min="1" max="6" value="2" class="w-full accent-amber-400">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-stone-300 mb-2">🏨 住宿等級選擇 (日月潭湖景房/標準房)</label>
+                        <select id="hotel-select" class="w-full bg-stone-800 border border-stone-700 text-stone-200 text-sm rounded-xl p-3 focus:ring-2 focus:ring-amber-400">
+                            <option value="4500">湖景首排雙人房 (約 $4,500/晚)</option>
+                            <option value="3000">精緻街景雙人房 (約 $3,000/晚)</option>
+                            <option value="6500">高級湖景四人房 (約 $6,500/晚)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-stone-300 mb-2">🚗 估計油資與油耗油錢 (基隆往返約500km)</label>
+                        <input type="number" id="fuel-input" value="1600" class="w-full bg-stone-800 border border-stone-700 text-stone-200 text-sm rounded-xl p-3 focus:ring-2 focus:ring-amber-400">
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 bg-stone-800 p-6 rounded-2xl border border-stone-700 flex flex-col justify-between space-y-6">
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                        <div class="p-3 bg-stone-900/60 rounded-xl">
+                            <div class="text-xs text-stone-400">景點門票總計</div>
+                            <div id="calc-tickets" class="text-base font-bold text-amber-300 mt-1">$500</div>
+                        </div>
+                        <div class="p-3 bg-stone-900/60 rounded-xl">
+                            <div class="text-xs text-stone-400">咖啡茶席低消</div>
+                            <div id="calc-cafes" class="text-base font-bold text-amber-300 mt-1">$1,200</div>
+                        </div>
+                        <div class="p-3 bg-stone-900/60 rounded-xl">
+                            <div class="text-xs text-stone-400">餐飲食肆預估</div>
+                            <div id="calc-meals" class="text-base font-bold text-amber-300 mt-1">$2,400</div>
+                        </div>
+                        <div class="p-3 bg-stone-900/60 rounded-xl">
+                            <div class="text-xs text-stone-400">住宿與油資</div>
+                            <div id="calc-stay-fuel" class="text-base font-bold text-amber-300 mt-1">$6,100</div>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-stone-700 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div>
+                            <span class="text-stone-400 text-xs block">預估行程總金額</span>
+                            <span id="calc-total" class="text-3xl font-extrabold text-white">$10,200</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-stone-400 text-xs block">預估平均每人支出</span>
+                            <span id="calc-per-person" class="text-3xl font-extrabold text-amber-400">$5,100</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-stone-900 text-stone-400 text-xs py-8 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-3">
+            <p>🧭 基隆至南投兩天一夜深度文化與尋味自由行線上指南</p>
+            <p class="text-stone-500">本應用程式內容基於最新營業規範、評分數據與交通路網規劃，僅供旅遊導航參考。</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        function filterTimeline(day) {
+            var items = document.querySelectorAll('.timeline-item');
+            var btns = document.querySelectorAll('.tl-btn');
+            
+            btns.forEach(function(b) {
+                b.classList.remove('bg-emerald-800', 'text-white', 'shadow-sm');
+                b.classList.add('bg-white', 'text-stone-700');
+            });
+
+            if(day === 'all') {
+                document.getElementById('btn-tl-all').classList.add('bg-emerald-800', 'text-white');
+                items.forEach(function(item){ item.style.display = 'flex'; });
+            } else if(day === 'day1') {
+                document.getElementById('btn-tl-day1').classList.add('bg-emerald-800', 'text-white');
+                items.forEach(function(item){
+                    if(item.classList.contains('day1')) item.style.display = 'flex';
+                    else item.style.display = 'none';
+                });
+            } else if(day === 'day2') {
+                document.getElementById('btn-tl-day2').classList.add('bg-emerald-800', 'text-white');
+                items.forEach(function(item){
+                    if(item.classList.contains('day2')) item.style.display = 'flex';
+                    else item.style.display = 'none';
+                });
+            }
+        }
+
+        function filterSpots(category) {
+            var cards = document.querySelectorAll('.spot-card');
+            var btns = document.querySelectorAll('.spot-filter');
+            
+            btns.forEach(function(b) {
+                b.classList.remove('bg-stone-800', 'text-white');
+                b.classList.add('bg-stone-200', 'text-stone-700');
+            });
+
+            event.target.classList.remove('bg-stone-200', 'text-stone-700');
+            event.target.classList.add('bg-stone-800', 'text-white');
+
+            cards.forEach(function(card) {
+                if(category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function updateCalculator() {
+            var people = parseInt(document.getElementById('people-range').value);
+            document.getElementById('people-count-label').innerText = people;
+
+            var hotel = parseInt(document.getElementById('hotel-select').value);
+            var fuel = parseInt(document.getElementById('fuel-input').value) || 0;
+
+            var ticketsPerPerson = 250;
+            var cafesPerPerson = 600;
+            var mealsPerPerson = 1200;
+
+            var totalTickets = ticketsPerPerson * people;
+            var totalCafes = cafesPerPerson * people;
+            var totalMeals = mealsPerPerson * people;
+            var totalStayFuel = hotel + fuel;
+
+            var grandTotal = totalTickets + totalCafes + totalMeals + totalStayFuel;
+            var perPerson = Math.round(grandTotal / people);
+
+            document.getElementById('calc-tickets').innerText = '$' + totalTickets.toLocaleString();
+            document.getElementById('calc-cafes').innerText = '$' + totalCafes.toLocaleString();
+            document.getElementById('calc-meals').innerText = '$' + totalMeals.toLocaleString();
+            document.getElementById('calc-stay-fuel').innerText = '$' + totalStayFuel.toLocaleString();
+            
+            document.getElementById('calc-total').innerText = '$' + grandTotal.toLocaleString();
+            document.getElementById('calc-per-person').innerText = '$' + perPerson.toLocaleString();
+        }
+
+        document.getElementById('people-range').addEventListener('input', updateCalculator);
+        document.getElementById('hotel-select').addEventListener('change', updateCalculator);
+        document.getElementById('fuel-input').addEventListener('input', updateCalculator);
+
+        window.addEventListener('DOMContentLoaded', function() {
+            updateCalculator();
+
+            var ctxType = document.getElementById('typeChart').getContext('2d');
+            new Chart(ctxType, {
+                type: 'radar',
+                data: {
+                    labels: ['工藝文化', '宗教藝術', '在地美食', '精品咖啡', '紅茶文化', '地景建築'],
+                    datasets: [{
+                        label: '體驗比重 (分值)',
+                        data: [90, 85, 95, 90, 85, 95],
+                        backgroundColor: 'rgba(5, 150, 105, 0.2)',
+                        borderColor: 'rgba(5, 150, 105, 1)',
+                        pointBackgroundColor: 'rgba(217, 119, 6, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(217, 119, 6, 1)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
+                            suggestedMin: 50,
+                            suggestedMax: 100
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+
+            var ctxCost = document.getElementById('costChart').getContext('2d');
+            new Chart(ctxCost, {
+                type: 'bar',
+                data: {
+                    labels: ['廣興紙寮', '中台博物館', '蠻荒咖啡', '鹿篙莊園', '隱茶和室'],
+                    datasets: [{
+                        label: '估算基本消費/門票 (NTD)',
+                        data: [50, 200, 110, 120, 300],
+                        backgroundColor: [
+                            'rgba(217, 119, 6, 0.8)',
+                            'rgba(147, 51, 234, 0.8)',
+                            'rgba(5, 150, 105, 0.8)',
+                            'rgba(13, 148, 136, 0.8)',
+                            'rgba(225, 29, 72, 0.8)'
+                        ],
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(0,0,0,0.05)' }
+                        },
+                        y: {
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
