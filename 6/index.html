@@ -1,0 +1,905 @@
+<!-- ... eslint-disable -->
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>教保相關人員違法事件調查處理相關法規與標準流程指引 | 專業法律與實務導引</title>
+    <meta name="description" content="提供最新幼兒教育及照顧法、教保服務人員條例之違法事件調查處理規範、標準作業流程(SOP)與常見問答解析。保障幼兒權益、落實園所法遵與調查程序。">
+    <meta name="keywords" content="教保相關人員違法事件, 調查處理法規, 教保服務人員條例, 幼兒教育及照顧法, 違法對待幼兒, 幼兒園通報流程, 調查小組, 幼兒園法遵">
+    <meta name="author" content="教保法規專業顧問">
+    
+    <!-- Open Graph / Social Media Meta Tags (SEO / GEO) -->
+    <meta property="og:title" content="教保相關人員違法事件調查處理相關法規與標準流程指引">
+    <meta property="og:description" content="完整解析幼兒教育法規、違法事件24小時通報與5階段調查處理標準作業流程。">
+    <meta property="og:image" content="https://img.ai365.fans/cdn-cgi/image/width=1400,quality=90,format=auto/artworks/08152fed-8c48-4167-95fb-d01edcdaacbb/ihmhsifkavk.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_TW">
+
+    <!-- AEO (Answer Engine Optimization) & Structured Data (JSON-LD Schema) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "園所發現疑似違法對待幼兒事件，應於何時完成通報？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "依規定，教保服務人員及幼兒園相關人員知悉疑似違法事件時，應於法定時限（通常為知悉後 24 小時內）透過各縣市校安通報系統或主管機關指定管道完成通報。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "調查期間被調查之教保人員是否需要暫時停聘或調離現職？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "為維護幼兒安全及避免證據受影響，主管機關或幼兒園得依情節輕重，在調查期間暫時將被調查人調離現職、停止照顧幼兒或依規定予以停聘。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "調查小組的組成人員有哪些？是否具備公信力？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "調查小組成員由主管機關自人才庫中遴派，包含幼兒教育專家學者、法律專家、兒童福利團體代表或具實務調查經驗之專業人員，且與當事人無利害關係。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "當事人對於調查結果或處分不服時，有哪些救濟管道？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "當事人若不服主管機關之行政處分，得於法定期間內依法提起訴願；若訴願遭駁回，可再向管轄之行政法院提起行政訴訟。"
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "GovernmentService",
+      "name": "教保相關人員違法事件調查處理指引",
+      "serviceType": "教育法規諮詢與行政調查處理",
+      "areaServed": "TW",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "教保服務人員、幼兒園園長、幼兒家長"
+      }
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // Check local storage for dark mode on load
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 antialiased selection:bg-brand-500 selection:text-white transition-colors duration-300">
+
+    <!-- 背景音樂 Audio 元素 -->
+    <audio id="bgAudio" loop preload="auto">
+        <source src="https://img.ai365.fans/artworks/08152fed-8c48-4167-95fb-d01edcdaacbb/52ti3fnuqzf.mp3" type="audio/mpeg">
+        您的瀏覽器不支援音樂播放元素。
+    </audio>
+
+    <!-- 頂部導覽列 (Mobile-First Responsive Navigation) -->
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- 品牌標誌與個人形象照 -->
+                <div class="flex items-center space-x-3">
+                    <div class="relative flex items-center justify-center">
+                        <img src="https://img.ai365.fans/cdn-cgi/image/width=1400,quality=90,format=auto/artworks/08152fed-8c48-4167-95fb-d01edcdaacbb/ihmhsifkavk.png" 
+                             alt="個人形象照" 
+                             class="w-10 h-10 rounded-xl object-cover shadow-md border border-brand-200 dark:border-brand-800"
+                             onerror="this.onerror=null; this.src='https://placehold.co/100x100/22c55e/ffffff?text=Avatar';">
+                        <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-brand-600 rounded-full border-2 border-white dark:border-slate-900 flex items-center justify-center text-[8px] text-white">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="font-bold text-base sm:text-lg text-slate-900 dark:text-white tracking-tight block">教保法規查詢網</span>
+                        <span class="text-xs text-slate-500 dark:text-slate-400 block -mt-1">違法事件調查處理專區</span>
+                    </div>
+                </div>
+
+                <!-- 電腦版導覽連結 -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="#overview" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">法規架構</a>
+                    <a href="#process" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">處理流程</a>
+                    <a href="#laws" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">核心法規</a>
+                    <a href="#faq" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">常見問答</a>
+                    <a href="#resources" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">相關表單</a>
+                </nav>
+
+                <!-- 工具列：音樂控制與深淺色切換 -->
+                <div class="flex items-center space-x-2">
+                    <!-- 音樂開關按鈕 -->
+                    <button id="musicToggleBtn" onclick="toggleMusic()" aria-label="開關背景音樂" class="p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none transition-colors relative flex items-center justify-center">
+                        <i id="musicIcon" class="fa-solid fa-volume-xmark text-lg"></i>
+                        <span id="musicPulse" class="absolute top-1 right-1 w-2 h-2 bg-brand-500 rounded-full hidden animate-ping"></span>
+                    </button>
+
+                    <!-- 主題切換按鈕 -->
+                    <button id="themeToggleBtn" onclick="toggleTheme()" aria-label="切換深淺色模式" class="p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none transition-colors">
+                        <i id="themeIcon" class="fa-solid fa-moon text-lg dark:hidden"></i>
+                        <i class="fa-solid fa-sun text-lg hidden dark:block text-amber-400"></i>
+                    </button>
+
+                    <!-- 手機版漢堡選單按鈕 -->
+                    <div class="flex items-center md:hidden">
+                        <button id="mobile-menu-btn" aria-label="打開導覽選單" class="p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none transition-colors">
+                            <i class="fa-solid fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 手機版下拉選單 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-4 space-y-1 shadow-lg">
+            <a href="#overview" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-50 dark:hover:bg-slate-800 hover:text-brand-700 dark:hover:text-brand-400 transition-colors">法規架構</a>
+            <a href="#process" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-50 dark:hover:bg-slate-800 hover:text-brand-700 dark:hover:text-brand-400 transition-colors">處理流程</a>
+            <a href="#laws" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-50 dark:hover:bg-slate-800 hover:text-brand-700 dark:hover:text-brand-400 transition-colors">核心法規</a>
+            <a href="#faq" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-50 dark:hover:bg-slate-800 hover:text-brand-700 dark:hover:text-brand-400 transition-colors">常見問答</a>
+            <a href="#resources" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-50 dark:hover:bg-slate-800 hover:text-brand-700 dark:hover:text-brand-400 transition-colors">相關表單</a>
+        </div>
+    </header>
+
+    <!-- 主頁面內容區 -->
+    <main>
+        <!-- 1. 頁首橫幅區 (Hero Section) -->
+        <section class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-brand-900 text-white py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="max-w-4xl mx-auto text-center relative z-10">
+                <!-- 形象照標籤展示 -->
+                <div class="flex justify-center mb-6">
+                    <div class="relative p-1 bg-white/10 rounded-full backdrop-blur-md border border-white/20 shadow-xl inline-block">
+                        <img src="https://img.ai365.fans/cdn-cgi/image/width=1400,quality=90,format=auto/artworks/08152fed-8c48-4167-95fb-d01edcdaacbb/ihmhsifkavk.png" 
+                             alt="專家形象照" 
+                             class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover shadow-inner"
+                             onerror="this.onerror=null; this.src='https://placehold.co/200x200/22c55e/ffffff?text=User';">
+                        <div class="absolute bottom-1 right-1 bg-brand-600 text-white text-xs px-2 py-0.5 rounded-full font-bold shadow border border-white/30">
+                            專業顧問
+                        </div>
+                    </div>
+                </div>
+
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-brand-500/20 text-brand-300 border border-brand-500/30 mb-4 backdrop-blur-sm">
+                    <i class="fa-solid fa-shield-halved"></i> 幼兒教育與照顧法規專區
+                </span>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+                    教保相關人員違法事件<br class="hidden sm:inline">調查處理相關法規
+                </h1>
+                <p class="text-base sm:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    保障幼兒權益、落實園所法遵。提供全國教保服務人員與園長違法事件通報、調查、審議與救濟之完整法規與標準作業流程指引。
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#process" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold shadow-lg shadow-brand-600/30 transition-all text-center flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-route"></i> 檢視標準處理流程
+                    </a>
+                    <a href="#laws" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold backdrop-blur-sm border border-white/20 transition-all text-center flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-book-open"></i> 瀏覽核心法規條文
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 快速搜尋與摘要導覽 (Quick Search / Overview) -->
+        <section id="overview" class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">法規架構與適用對象</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">依據《教保服務人員條例》及《幼兒教育及照顧法》，針對違法事件調查處理建立嚴謹規範。</p>
+            </div>
+
+            <!-- 即時關鍵字搜尋框 -->
+            <div class="max-w-xl mx-auto mb-12">
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <input type="text" id="searchInput" placeholder="輸入關鍵字快速搜尋法規、流程或問答（例：通報、調查小組、解聘）..." class="w-full pl-11 pr-4 py-3.5 bg-white dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-300 dark:border-slate-700 rounded-2xl shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm sm:text-base transition-all placeholder:text-slate-400">
+                </div>
+                <div id="searchResultsCount" class="text-xs text-slate-500 dark:text-slate-400 mt-2 text-right hidden"></div>
+            </div>
+
+            <!-- 三大核心對象與架構卡片 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- 卡片 1 -->
+                <div class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 flex items-center justify-center mb-6 text-xl">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">適用對象範圍</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                            包含幼兒園園長、教保員、教師、助理教保員及其他兼任或代課人員。不論公立或私立幼兒園均一體適用。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center text-xs text-brand-600 dark:text-brand-400 font-semibold">
+                        <span>涵蓋全體教保從業人員</span>
+                    </div>
+                </div>
+
+                <!-- 卡片 2 -->
+                <div class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 flex items-center justify-center mb-6 text-xl">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">違法事件樣態</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                            包含虐待、體罰、霸凌、性騷擾、不當管教、違反身心健康法規或挪用公款、影響幼兒安全等重大違失行為。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center text-xs text-brand-600 dark:text-brand-400 font-semibold">
+                        <span>零容忍違法行為</span>
+                    </div>
+                </div>
+
+                <!-- 卡片 3 -->
+                <div class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 flex items-center justify-center mb-6 text-xl">
+                            <i class="fa-solid fa-gavel"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">調查與裁處機制</h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                            主管機關應組成調查小組，秉持客觀、公正、專業原則進行調查，審議通過後依法進行解聘、罰鍰或公布姓名。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center text-xs text-brand-600 dark:text-brand-400 font-semibold">
+                        <span>公正獨立審議調查</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 標準處理流程 (Process Flow) -->
+        <section id="process" class="bg-white dark:bg-slate-900 py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-y border-slate-200 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-600 dark:text-brand-400 font-semibold text-xs sm:text-sm uppercase tracking-wider block mb-2">Standard Operating Procedure</span>
+                    <h2 class="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">違法事件調查處理 5 階段標準流程</h2>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base">從事件發生通報、立案調查到審議處置的完整法定程序。</p>
+                </div>
+
+                <!-- 流程步驟時間軸 (RWD Responsive Timeline) -->
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-6 relative">
+                    <!-- 階段 1 -->
+                    <div class="bg-slate-50 dark:bg-slate-950 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 relative flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="w-10 h-10 rounded-xl bg-brand-600 text-white font-bold flex items-center justify-center text-sm shadow-md">01</span>
+                                <span class="text-xs font-semibold text-slate-400 bg-white dark:bg-slate-900 px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800">立即通報</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">事件發現與通報</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
+                                知悉疑似違法事件時，園方應於法定時限內（通常為24小時內）向直轄市、縣（市）主管機關通報。
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-3 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                            <i class="fa-solid fa-clock text-brand-600 dark:text-brand-400"></i> 時效：24小時內
+                        </div>
+                    </div>
+
+                    <!-- 階段 2 -->
+                    <div class="bg-slate-50 dark:bg-slate-950 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 relative flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="w-10 h-10 rounded-xl bg-brand-600 text-white font-bold flex items-center justify-center text-sm shadow-md">02</span>
+                                <span class="text-xs font-semibold text-slate-400 bg-white dark:bg-slate-900 px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800">受理立案</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">主管機關受理與組團</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
+                                主管機關審認是否受理，並組成「調查小組」，納入專家學者、法律或兒童福利專業人員進行調查。
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-3 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                            <i class="fa-solid fa-users text-brand-600 dark:text-brand-400"></i> 專家組成小組
+                        </div>
+                    </div>
+
+                    <!-- 階段 3 -->
+                    <div class="bg-slate-50 dark:bg-slate-950 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 relative flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="w-10 h-10 rounded-xl bg-brand-600 text-white font-bold flex items-center justify-center text-sm shadow-md">03</span>
+                                <span class="text-xs font-semibold text-slate-400 bg-white dark:bg-slate-900 px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800">事實調查</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">訪談蒐證與報告</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
+                                調查小組進行調閱監視器、訪談當事人與關係人、撰寫調查報告，提交認定委員會審議。
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-3 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                            <i class="fa-solid fa-file-lines text-brand-600 dark:text-brand-400"></i> 客觀公正訪談
+                        </div>
+                    </div>
+
+                    <!-- 階段 4 -->
+                    <div class="bg-slate-50 dark:bg-slate-950 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 relative flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="w-10 h-10 rounded-xl bg-brand-600 text-white font-bold flex items-center justify-center text-sm shadow-md">04</span>
+                                <span class="text-xs font-semibold text-slate-400 bg-white dark:bg-slate-900 px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800">審議裁處</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">認定與處置決定</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
+                                認定委員會依調查結果做成決議，依法裁處罰鍰、解聘、停聘、免職，並得公告行為人姓名。
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-3 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                            <i class="fa-solid fa-gavel text-brand-600 dark:text-brand-400"></i> 依法嚴格裁處
+                        </div>
+                    </div>
+
+                    <!-- 階段 5 -->
+                    <div class="bg-slate-50 dark:bg-slate-950 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 relative flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="w-10 h-10 rounded-xl bg-brand-600 text-white font-bold flex items-center justify-center text-sm shadow-md">05</span>
+                                <span class="text-xs font-semibold text-slate-400 bg-white dark:bg-slate-900 px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800">救濟程序</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">通知當事人與救濟</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
+                                書面通知當事人處理結果及教示救濟管道（如訴願或行政訴訟），並列管追蹤後續改善情形。
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-3 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                            <i class="fa-solid fa-scale-balanced text-brand-600 dark:text-brand-400"></i> 保障法定權益
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 核心法規條文與內容 (Core Laws Section) -->
+        <section id="laws" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-600 dark:text-brand-400 font-semibold text-xs sm:text-sm uppercase tracking-wider block mb-2">Legal Provisions</span>
+                <h2 class="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">核心法規條文與要點摘要</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">精選教保相關人員違法事件調查處理最核心之法律條文與說明。</p>
+            </div>
+
+            <!-- 法規切換分頁按鈕 (Tabs) -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <button onclick="switchTab('law1')" id="btn-law1" class="law-tab-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition-all bg-brand-600 text-white shadow-md shadow-brand-500/20">
+                    教保服務人員條例
+                </button>
+                <button onclick="switchTab('law2')" id="btn-law2" class="law-tab-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800">
+                    幼兒教育及照顧法
+                </button>
+                <button onclick="switchTab('law3')" id="btn-law3" class="law-tab-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800">
+                    調查處理辦法要點
+                </button>
+            </div>
+
+            <!-- 分頁內容容器 -->
+            <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-6 sm:p-10">
+                <!-- Tab 1: 教保服務人員條例 -->
+                <div id="content-law1" class="law-content space-y-6">
+                    <div class="flex items-start justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
+                        <div>
+                            <span class="text-xs font-bold text-brand-700 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/50 px-3 py-1 rounded-full uppercase tracking-wider">核心法規</span>
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-2">教保服務人員條例相關條文摘要</h3>
+                        </div>
+                        <span class="text-xs text-slate-400">法規有效性：現行法</span>
+                    </div>
+                    <div class="space-y-4 text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                        <div class="bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border-l-4 border-brand-500">
+                            <h4 class="font-bold text-slate-900 dark:text-white mb-1">第 32 條、第 33 條（違法對待幼兒之禁止與處罰）</h4>
+                            <p class="text-slate-600 dark:text-slate-400">教保服務人員不得對幼兒有身心虐待、體罰、霸凌、性騷擾或其他不當管教行為。違者處負責人或行為人罰鍰，情節重大者應予解聘、免職或終身（或 1 至 4 年）不得再任用。</p>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border-l-4 border-brand-500">
+                            <h4 class="font-bold text-slate-900 dark:text-white mb-1">第 34 條（通報義務）</h4>
+                            <p class="text-slate-600 dark:text-slate-400">教保服務人員知悉園內發生疑似違法對待幼兒事件時，應即依規定向直轄市、縣（市）主管機關通報，不得隱匿。</p>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border-l-4 border-brand-500">
+                            <h4 class="font-bold text-slate-900 dark:text-white mb-1">調查與審議組織</h4>
+                            <p class="text-slate-600 dark:text-slate-400">主管機關為處理違法事件，應組成調查小組及認定委員會，確保調查程序之客觀、公正及專業性。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: 幼兒教育及照顧法 -->
+                <div id="content-law2" class="law-content hidden space-y-6">
+                    <div class="flex items-start justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
+                        <div>
+                            <span class="text-xs font-bold text-brand-700 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/50 px-3 py-1 rounded-full uppercase tracking-wider">配套法規</span>
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-2">幼兒教育及照顧法相關規範</h3>
+                        </div>
+                        <span class="text-xs text-slate-400">法規有效性：現行法</span>
+                    </div>
+                    <div class="space-y-4 text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                        <div class="bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border-l-4 border-brand-500">
+                            <h4 class="font-bold text-slate-900 dark:text-white mb-1">幼兒園設立與管理規範</h4>
+                            <p class="text-slate-600 dark:text-slate-400">幼兒園應善盡管理監督責任，若園內發生重大違法事件且未依規定處理或隱匿不報，主管機關得對幼兒園予以減班、停招、罰鍰或廢止設立許可處分。</p>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border-l-4 border-brand-500">
+                            <h4 class="font-bold text-slate-900 dark:text-white mb-1">園長責任與行政處分</h4>
+                            <p class="text-slate-600 dark:text-slate-400">園長對園內教保人員負有督導之責，若涉有包庇或未善盡通報調查責任，亦應負擔相應之行政懲處及法律責任。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: 調查處理辦法要點 -->
+                <div id="content-law3" class="law-content hidden space-y-6">
+                    <div class="flex items-start justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
+                        <div>
+                            <span class="text-xs font-bold text-brand-700 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/50 px-3 py-1 rounded-full uppercase tracking-wider">行政規則</span>
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-2">直轄市縣(市)主管機關處理要點摘要</h3>
+                        </div>
+                        <span class="text-xs text-slate-400">程序標準</span>
+                    </div>
+                    <div class="space-y-4 text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                        <div class="bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border-l-4 border-brand-500">
+                            <h4 class="font-bold text-slate-900 dark:text-white mb-1">調查期限與程序保障</h4>
+                            <p class="text-slate-600 dark:text-slate-400">調查小組應於組成後一定期限內（通常為30日內）完成調查報告，並給予當事人充分之陳述意見機會，兼顧程序正義。</p>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border-l-4 border-brand-500">
+                            <h4 class="font-bold text-slate-900 dark:text-white mb-1">保密義務與迴避原則</h4>
+                            <p class="text-slate-600 dark:text-slate-400">參與調查處理之人員對於當事人及檢舉人之姓名及足資識別身分之資訊應予保密。與當事人有利害關係者應主動迴避。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 常見問答 (FAQ Section - Interactive Accordion) -->
+        <section id="faq" class="bg-slate-100 dark:bg-slate-950 py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-y border-slate-200 dark:border-slate-800">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-600 dark:text-brand-400 font-semibold text-xs sm:text-sm uppercase tracking-wider block mb-2">Q & A</span>
+                    <h2 class="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">常見問答與疑義解析</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">針對園所與家長最關心的通報與調查問題進行專業解答。</p>
+                </div>
+
+                <!-- 手風琴列表 -->
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+                        <button onclick="toggleFaq('faq1')" class="w-full px-6 py-4 text-left font-bold text-slate-900 dark:text-white flex items-center justify-between gap-4 focus:outline-none hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                            <span class="flex items-center gap-3">
+                                <span class="w-7 h-7 rounded-lg bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xs font-bold">Q1</span>
+                                園所發現疑似違法對待幼兒事件，應於何時完成通報？
+                            </span>
+                            <i id="icon-faq1" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                        </button>
+                        <div id="content-faq1" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-4">
+                            依規定，教保服務人員及幼兒園相關人員知悉疑似違法事件時，應於法定時限（通常為知悉後 24 小時內）透過各縣市校安通報系統或主管機關指定管道完成通報，切勿延遲或私下私了，以免遭受加重裁罰。
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+                        <button onclick="toggleFaq('faq2')" class="w-full px-6 py-4 text-left font-bold text-slate-900 dark:text-white flex items-center justify-between gap-4 focus:outline-none hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                            <span class="flex items-center gap-3">
+                                <span class="w-7 h-7 rounded-lg bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xs font-bold">Q2</span>
+                                調查期間被調查之教保人員是否需要暫時停聘或調離現職？
+                            </span>
+                            <i id="icon-faq2" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                        </button>
+                        <div id="content-faq2" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-4">
+                            為維護幼兒安全及避免證據受影響，主管機關或幼兒園得依情節輕重，在調查期間暫時將被調查人調離現職、停止照顧幼兒或依規定予以停聘，待調查結果出爐後再行處置。
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+                        <button onclick="toggleFaq('faq3')" class="w-full px-6 py-4 text-left font-bold text-slate-900 dark:text-white flex items-center justify-between gap-4 focus:outline-none hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                            <span class="flex items-center gap-3">
+                                <span class="w-7 h-7 rounded-lg bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xs font-bold">Q3</span>
+                                調查小組的組成人員有哪些？是否具備公信力？
+                            </span>
+                            <i id="icon-faq3" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                        </button>
+                        <div id="content-faq3" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-4">
+                            調查小組成員由主管機關自人才庫中遴派，成員通常包含幼兒教育專家學者、法律專家、兒童福利團體代表或具實務調查經驗之專業人員，且與當事人無利害關係，以確保調查過程公正客觀。
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+                        <button onclick="toggleFaq('faq4')" class="w-full px-6 py-4 text-left font-bold text-slate-900 dark:text-white flex items-center justify-between gap-4 focus:outline-none hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                            <span class="flex items-center gap-3">
+                                <span class="w-7 h-7 rounded-lg bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xs font-bold">Q4</span>
+                                當事人對於調查結果或處分不服時，有哪些救濟管道？
+                            </span>
+                            <i id="icon-faq4" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                        </button>
+                        <div id="content-faq4" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-4">
+                            當事人若不服主管機關之行政處分，得於法定期間內依法提起訴願；若訴願遭駁回或不服訴願決定，可再向管轄之行政法院提起行政訴訟，以維護自身權益。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. 相關表單與下載專區 (Resources & Downloads) -->
+        <section id="resources" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-600 dark:text-brand-400 font-semibold text-xs sm:text-sm uppercase tracking-wider block mb-2">Downloads & Links</span>
+                <h2 class="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">法規參考文件與下載專區</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">提供常用通報表格範本與中央主管機關法規連結參考。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                <!-- 檔案卡片 1 -->
+                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-950/50 text-red-600 dark:text-red-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-file-pdf"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">教保服務人員條例全文</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">PDF 格式文件</p>
+                        </div>
+                    </div>
+                    <button onclick="showDownloadMessage('教保服務人員條例全文.pdf')" aria-label="下載教保服務人員條例全文" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600 text-slate-600 dark:text-slate-300 transition-colors">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                </div>
+
+                <!-- 檔案卡片 2 -->
+                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-file-word"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">疑似違法事件通報表範本</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">DOCX 格式表單</p>
+                        </div>
+                    </div>
+                    <button onclick="showDownloadMessage('疑似違法事件通報表範本.docx')" aria-label="下載疑似違法事件通報表範本" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600 text-slate-600 dark:text-slate-300 transition-colors">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                </div>
+
+                <!-- 檔案卡片 3 -->
+                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">調查處理程序Q&A手冊</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">PDF 格式手冊</p>
+                        </div>
+                    </div>
+                    <button onclick="showDownloadMessage('調查處理程序QA手冊.pdf')" aria-label="下載調查處理程序Q&A手冊" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600 text-slate-600 dark:text-slate-300 transition-colors">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 7. 線上法規諮詢表單 (Google Sheets Integration Form) -->
+        <section id="resources" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-600 dark:text-brand-400 font-semibold text-xs sm:text-sm uppercase tracking-wider block mb-2">Downloads & Links</span>
+                <h2 class="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">法規參考文件與下載專區</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">提供常用通報表格範本與中央主管機關法規連結參考。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                <!-- 檔案卡片 1 -->
+                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-950/50 text-red-600 dark:text-red-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-file-pdf"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">教保服務人員條例全文</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">PDF 格式文件</p>
+                        </div>
+                    </div>
+                    <button onclick="showDownloadMessage('教保服務人員條例全文.pdf')" aria-label="下載教保服務人員條例全文" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600 text-slate-600 dark:text-slate-300 transition-colors">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                </div>
+
+                <!-- 檔案卡片 2 -->
+                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-file-word"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">疑似違法事件通報表範本</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">DOCX 格式表單</p>
+                        </div>
+                    </div>
+                    <button onclick="showDownloadMessage('疑似違法事件通報表範本.docx')" aria-label="下載疑似違法事件通報表範本" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600 text-slate-600 dark:text-slate-300 transition-colors">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                </div>
+
+                <!-- 檔案卡片 3 -->
+                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">調查處理程序Q&A手冊</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">PDF 格式手冊</p>
+                        </div>
+                    </div>
+                    <button onclick="showDownloadMessage('調查處理程序QA手冊.pdf')" aria-label="下載調查處理程序Q&A手冊" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600 text-slate-600 dark:text-slate-300 transition-colors">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 7. 線上法規諮詢表單 (Google Sheets Integration Form) -->
+            <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-sm max-w-3xl mx-auto">
+                <div class="text-center mb-8">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 mb-2">
+                        <i class="fa-solid fa-headset"></i> 即時諮詢與意見回饋
+                    </span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">填寫表單送至 Google 試算表</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-1">請填寫您的姓名與連絡電話，我們將盡快為您提供法規疑義解答。</p>
+                </div>
+
+                <form id="consultationForm" onsubmit="submitToGoogleSheet(event)" class="space-y-5">
+                    <div>
+                        <label for="formName" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">姓名 <span class="text-red-500">*</span></label>
+                        <input type="text" id="formName" name="name" required placeholder="請輸入您的姓名或職稱" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
+                    </div>
+                    <div>
+                        <label for="formPhone" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">連絡電話 <span class="text-red-500">*</span></label>
+                        <input type="tel" id="formPhone" name="phone" required placeholder="請輸入您的連絡電話 (例: 0912-345678)" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
+                    </div>
+                    <div>
+                        <label for="formQuestion" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">諮詢問題或調查處理疑義</label>
+                        <textarea id="formQuestion" name="question" rows="4" placeholder="請簡述您想諮詢的法規問題或實務狀況..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all"></textarea>
+                    </div>
+                    <div>
+                        <label for="gasUrl" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Google Apps Script Web App 部署網址 (URL)</label>
+                        <input type="url" id="gasUrl" value="https://script.google.com/macros/s/AKfycbzDkFDLhb6rSjHaY5_4yRM8UaEkPMa3AlWuKmK10Gq8gC7g5zMduQ5FRFHo8-R5XphktQ/exec" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
+                        <p class="text-[11px] text-slate-400 mt-1">已自動載入您的 Google Apps Script 部署網址。</p>
+                    </div>
+                    <button type="submit" id="submitBtn" class="w-full py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm transition-all shadow-lg shadow-brand-500/20 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> 確認送出表單資料
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁尾 (Footer) -->
+    <footer class="bg-slate-900 text-slate-400 py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-scale-balanced text-sm"></i>
+                </div>
+                <span class="font-bold text-white text-sm tracking-tight">教保相關人員違法事件調查處理專區</span>
+            </div>
+            <p class="text-xs text-slate-500 text-center md:text-left">
+                本網站內容依據我國現行《教保服務人員條例》及相關幼教法規編修，提供實務參考。
+            </p>
+            <div class="text-xs text-slate-500">
+                &copy; 2026 Childcare Regulation Guide. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 自訂訊息對話框 (Custom Message Box instead of alert) -->
+    <div id="customModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm hidden">
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 max-w-sm w-full mx-4 shadow-2xl text-center transform transition-all border border-slate-200 dark:border-slate-800">
+            <div class="w-14 h-14 bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 id="modalTitle" class="text-lg font-bold text-slate-900 dark:text-white mb-2">下載提示</h3>
+            <p id="modalMessage" class="text-sm text-slate-600 dark:text-slate-300 mb-6">檔案下載模擬成功！</p>
+            <button onclick="closeModal()" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm transition-colors shadow-lg shadow-brand-500/20">
+                我知道了
+            </button>
+        </div>
+    </div>
+
+    <!-- 原生 JavaScript 互動邏輯 -->
+    <script>
+        // 1. 手機版漢堡選單切換
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 點擊選單項目後自動收合手機選單
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. 核心法規分頁切換邏輯
+        function switchTab(tabId) {
+            // 隱藏所有內容
+            document.querySelectorAll('.law-content').forEach(el => {
+                el.classList.add('hidden');
+            });
+            // 移除所有按鈕啟用樣式
+            document.querySelectorAll('.law-tab-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-600', 'text-white', 'shadow-md', 'shadow-brand-500/20');
+                btn.classList.add('bg-white', 'dark:bg-slate-900', 'text-slate-600', 'dark:text-slate-300', 'hover:bg-slate-100', 'dark:hover:bg-slate-800', 'border', 'border-slate-200', 'dark:border-slate-800');
+            });
+
+            // 顯示目標內容
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+            
+            // 啟用目標按鈕樣式
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('bg-white', 'dark:bg-slate-900', 'text-slate-600', 'dark:text-slate-300', 'hover:bg-slate-100', 'dark:hover:bg-slate-800', 'border', 'border-slate-200', 'dark:border-slate-800');
+            activeBtn.classList.add('bg-brand-600', 'text-white', 'shadow-md', 'shadow-brand-500/20');
+        }
+
+        // 3. 常見問答 (FAQ) 手風琴展開/收合
+        function toggleFaq(faqId) {
+            const content = document.getElementById('content-' + faqId);
+            const icon = document.getElementById('icon-' + faqId);
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // 4. 自訂對話框 (Modal) 函式 (取代 alert)
+        function showDownloadMessage(fileName) {
+            const modal = document.getElementById('customModal');
+            const modalMessage = document.getElementById('modalMessage');
+            modalMessage.textContent = `已成功觸發「${fileName}」下載模擬！`;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('customModal');
+            modal.classList.add('hidden');
+        }
+
+        // 5. 即時關鍵字搜尋與高亮過濾 (Search Filter Demo)
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', (e) => {
+            const keyword = e.target.value.trim().toLowerCase();
+            const faqItems = document.querySelectorAll('#faq .bg-white, #faq .dark\\:bg-slate-900');
+            let matchCount = 0;
+
+            if (keyword === '') {
+                faqItems.forEach(item => item.style.display = 'block');
+                document.getElementById('searchResultsCount').classList.add('hidden');
+                return;
+            }
+
+            faqItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(keyword)) {
+                    item.style.display = 'block';
+                    matchCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            const countDiv = document.getElementById('searchResultsCount');
+            countDiv.textContent = `找到 ${matchCount} 筆相關問答結果`;
+            countDiv.classList.remove('hidden');
+        });
+
+        // 6. 背景音樂開關控制
+        const bgAudio = document.getElementById('bgAudio');
+        const musicIcon = document.getElementById('musicIcon');
+        const musicPulse = document.getElementById('musicPulse');
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                bgAudio.pause();
+                musicIcon.classList.remove('fa-volume-high', 'text-brand-600', 'dark:text-brand-400');
+                musicIcon.classList.add('fa-volume-xmark');
+                musicPulse.classList.add('hidden');
+                isPlaying = false;
+            } else {
+                bgAudio.play().then(() => {
+                    musicIcon.classList.remove('fa-volume-xmark');
+                    musicIcon.classList.add('fa-volume-high', 'text-brand-600', 'dark:text-brand-400');
+                    musicPulse.classList.remove('hidden');
+                    isPlaying = true;
+                }).catch(error => {
+                    console.log("Audio playback prevented:", error);
+                    showDownloadMessage("音樂播放遭瀏覽器攔截，請再次點擊或檢查網路連線");
+                });
+            }
+        }
+
+        // 7. 深色與淺色模式切換
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        }
+
+        // 8. Google Sheets 表單送出處理 (避開 CORS 限制)
+        function submitToGoogleSheet(event) {
+            event.preventDefault();
+            const gasUrl = document.getElementById('gasUrl').value.trim();
+            const name = document.getElementById('formName').value.trim();
+            const phone = document.getElementById('formPhone').value.trim();
+            const question = document.getElementById('formQuestion').value.trim();
+            const submitBtn = document.getElementById('submitBtn');
+
+            if (!gasUrl) {
+                showDownloadMessage("請先填入您的 Google Apps Script Web App 部署網址！");
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> 資料傳送中...';
+
+            // 使用 no-cors 或透過隱藏 iframe / URLSearchParams 避免跨網域 CORS 問題
+            const formData = new URLSearchParams();
+            formData.append('name', name);
+            formData.append('phone', phone);
+            formData.append('question', question);
+
+            fetch(gasUrl, {
+                method: 'POST',
+                mode: 'no-cors', // 避開 CORS 錯誤
+                body: formData
+            }).then(() => {
+                showDownloadMessage("感謝您的填寫！您的姓名與連絡電話已成功寫入 Google 試算表。");
+                document.getElementById('consultationForm').reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> 確認送出表單資料';
+            }).catch(error => {
+                console.error('Error:', error);
+                showDownloadMessage("送出發生錯誤，請確認 GAS 網址是否正確。");
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> 確認送出表單資料';
+            });
+        }
+    </script>
+</body>
+</html>
