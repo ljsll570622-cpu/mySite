@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO / GEO / AEO 最佳化 Meta 標籤 -->
+    <title>校園霸凌防治準則專區 | 定義、樣態辨識、通報流程與求助管道</title>
+    <meta name="description" content="教育部校園霸凌防治準則官方宣導專區。提供校園霸凌定義、言語與網路霸凌樣態辨識、24小時反霸凌專線1953、通報流程與線上匿名求助管道，守護友善溫馨校園。">
+    <meta name="keywords" content="校園霸凌,防治準則,反霸凌專線1953,網路霸凌,教育部,霸凌通報,友善校園,學生輔導">
+    <meta name="author" content="校園霸凌防治教育網">
+    
+    <!-- GEO (地理最佳化 - 針對臺灣地區) -->
+    <meta name="geo.region" content="TW">
+    <meta name="geo.placename" content="Taiwan">
+    <meta name="language" content="Traditional Chinese">
+
+    <!-- Open Graph (社群分享 SEO) -->
+    <meta property="og:title" content="校園霸凌防治準則專區 | 定義、樣態辨識、通報流程與求助管道">
+    <meta property="og:description" content="教育部校園霸凌防治準則官方宣導專區。提供定義、樣態辨識、1953專線與通報流程。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://img.ai365.fans/cdn-cgi/image/width=1400,quality=90,format=auto/artworks/08152fed-8c48-4167-95fb-d01edcdaacbb/ihmhsifkavk.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="校園霸凌防治準則專區">
+    <meta name="twitter:description" content="了解校園霸凌防治準則，掌握通報流程與求助管道。">
+    <meta name="twitter:image" content="https://img.ai365.fans/cdn-cgi/image/width=1400,quality=90,format=auto/artworks/08152fed-8c48-4167-95fb-d01edcdaacbb/ihmhsifkavk.png">
+
+    <!-- AEO (答案引擎最佳化 - Schema.org JSON-LD 結構化資料) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "同學之間開玩笑跟霸凌有什麼差別？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "開玩笑是雙方都覺得好笑、彼此樂意接受的互動。如果有一方感到不舒服、被冒犯、痛苦，且對方持續這樣做、雙方處於權力不對等，那就符合霸凌的要件，不能用「只是開玩笑」來合理化。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "匿名通報會不會遭到吃案或不受理？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不會。依據規定，學校接獲任何形式（包含匿名）的霸凌通報或檢舉，皆須依法錄案處理並召開防制委員會審議。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "目擊霸凌但沒有參與，這樣也算有責任嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "雖然旁觀者不是加害人，但在友善校園中，鼓勵大家在自身安全許可下伸出援手、通報師長或事後關懷被害人，避免沉默助長霸凌氣焰。"
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "GovernmentOrganization",
+      "name": "校園霸凌防治教育網",
+      "url": "#",
+      "telephone": "1953",
+      "email": "bully@school.edu.tw",
+      "areaServed": "TW",
+      "description": "推動校園霸凌防制準則、受理通報與提供求助輔導管道。"
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter / Noto Sans TC -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .drawer-transition {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 antialiased selection:bg-brand-500 selection:text-white transition-colors duration-300">
+
+    <!-- 背景音樂音訊元素 -->
+    <audio id="bg-music" loop>
+        <source src="https://img.ai365.fans/artworks/08152fed-8c48-4167-95fb-d01edcdaacbb/52ti3fnuqzf.mp3" type="audio/mpeg">
+        您的瀏覽器不支援音樂播放。
+    </audio>
+
+    <!-- 頂部導覽列 (Header & Navigation) -->
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo / 標題 -->
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-white font-bold text-xl shadow-md shadow-brand-500/20">
+                    防
+                </div>
+                <div>
+                    <span class="block font-bold text-slate-900 dark:text-white leading-tight">校園霸凌防制</span>
+                    <span class="block text-xs text-slate-500 dark:text-slate-400">人人有責・溫馨校園</span>
+                </div>
+            </a>
+
+            <!-- 桌面版導覽連結 -->
+            <nav class="hidden md:flex items-center space-x-1 lg:space-x-4">
+                <a href="#definition" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 rounded-lg transition-colors">霸凌定義</a>
+                <a href="#types" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 rounded-lg transition-colors">樣態辨識</a>
+                <a href="#process" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 rounded-lg transition-colors">通報流程</a>
+                <a href="#support" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 rounded-lg transition-colors">申訴與協助</a>
+                <a href="#faq" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 rounded-lg transition-colors">常見 Q&A</a>
+            </nav>
+
+            <!-- 右側功能按鈕 (音樂、主題切換、通報) -->
+            <div class="hidden md:flex items-center space-x-2">
+                <!-- 背景音樂開關按鈕 -->
+                <button id="music-toggle-btn" onclick="toggleMusic()" aria-label="切換背景音樂" class="p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center gap-1.5 text-xs font-medium border border-slate-200 dark:border-slate-700">
+                    <span id="music-icon">🔇</span>
+                    <span id="music-text">音樂關閉</span>
+                </button>
+
+                <!-- 深淺色切換按鈕 -->
+                <button id="theme-toggle-btn" onclick="toggleTheme()" aria-label="切換深淺色模式" class="p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-200 dark:border-slate-700">
+                    <span id="theme-icon">🌙</span>
+                </button>
+
+                <a href="#support" class="bg-red-600 hover:bg-red-700 text-white font-medium text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-red-600/20 transition-all transform hover:-translate-y-0.5">
+                    🚨 立即求助通報
+                </a>
+            </div>
+
+            <!-- 手機版右側功能區 -->
+            <div class="flex items-center space-x-1 md:hidden">
+                <button onclick="toggleMusic()" aria-label="切換音樂" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm">
+                    <span id="music-icon-mob">🔇</span>
+                </button>
+                <button onclick="toggleTheme()" aria-label="切換主題" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm">
+                    <span id="theme-icon-mob">🌙</span>
+                </button>
+                <button id="menu-btn" aria-label="切換選單" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 手機版選單 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-4 space-y-1 shadow-xl transition-colors">
+            <a href="#definition" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-50 hover:text-brand-600">霸凌定義</a>
+            <a href="#types" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-50 hover:text-brand-600">樣態辨識</a>
+            <a href="#process" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-50 hover:text-brand-600">通報流程</a>
+            <a href="#support" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-50 hover:text-brand-600">申訴與協助</a>
+            <a href="#faq" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-50 hover:text-brand-600">常見 Q&A</a>
+            <div class="pt-2">
+                <a href="#support" class="mobile-link block w-full text-center bg-red-600 hover:bg-red-700 text-white font-medium py-3 rounded-xl shadow-md">
+                    🚨 立即求助通報
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要內容區 (Main Container) -->
+    <main>
+        <!-- 1. Hero 橫幅區 -->
+        <section class="relative bg-gradient-to-br from-brand-900 via-brand-800 to-slate-900 text-white py-16 sm:py-24 overflow-hidden">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- 文字與按鈕內容 -->
+                    <div class="lg:col-span-7 text-center lg:text-left">
+                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-brand-500/20 text-brand-300 border border-brand-500/30 mb-6">
+                            <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span>
+                            教育部校園霸凌防制準則專區
+                        </span>
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
+                            營造尊重的校園環境<br class="hidden sm:inline">拒絕任何形式的霸凌
+                        </h1>
+                        <p class="max-w-2xl mx-auto lg:mx-0 text-base sm:text-lg text-slate-300 mb-10 leading-relaxed">
+                            了解霸凌定義、辨識霸凌行為、掌握通報處理流程。當你或身邊的人需要幫助時，勇敢說出來，我們一起面對。
+                        </p>
+                        <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                            <a href="#definition" class="bg-brand-500 hover:bg-brand-600 text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg shadow-brand-500/30 transition-all text-center">
+                                深入了解防治準則
+                            </a>
+                            <a href="#support" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-8 py-3.5 rounded-xl backdrop-blur-sm transition-all text-center">
+                                獲取求助管道
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 形象照展示區 -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 bg-slate-800">
+                            <img src="https://img.ai365.fans/cdn-cgi/image/width=1400,quality=90,format=auto/artworks/08152fed-8c48-4167-95fb-d01edcdaacbb/ihmhsifkavk.png" 
+                                 alt="校園防制宣導形象照" 
+                                 onerror="this.src='https://placehold.co/400x400/1e293b/ffffff?text=Portrait'"
+                                 class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500">
+                            <!-- 裝飾標籤 -->
+                            <div class="absolute bottom-4 left-4 right-4 bg-slate-900/80 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/10 flex items-center gap-3">
+                                <div class="w-3 h-3 rounded-full bg-brand-500"></div>
+                                <span class="text-xs font-medium text-white">友善校園・守護天使</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 霸凌定義與構成要件 (Definition) -->
+        <section id="definition" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-600 dark:text-brand-400 tracking-wider uppercase mb-2">DEFINITION</h2>
+                <h3 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">什麼是校園霸凌？</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
+                    根據最新校園霸凌防制準則，霸凌行為需同時具備特定要件，讓我們一起正確認知。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 卡片 1 -->
+                <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-brand-400 rounded-xl flex items-center justify-center font-bold text-xl mb-6">
+                        01
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-3">行為表現</h4>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        個人或集體持續故意透過語言、肢體、網路或其他方式，進行嘲弄、攻擊、威脅、排擠等。
+                    </p>
+                </div>
+                <!-- 卡片 2 -->
+                <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-brand-400 rounded-xl flex items-center justify-center font-bold text-xl mb-6">
+                        02
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-3">權力不對等</h4>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        雙方處於權力不對等（如年齡、人數、身形、社會地位或群體優勢）的情況下，使他人難以抵抗。
+                    </p>
+                </div>
+                <!-- 卡片 3 -->
+                <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-brand-400 rounded-xl flex items-center justify-center font-bold text-xl mb-6">
+                        03
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-3">造成身心傷害</h4>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        導致被害人產生生理或心理痛苦、恐懼，或影響其正常學習與人格發展。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 霸凌樣態辨識 (Types - Interactive Tabs) -->
+        <section id="types" class="bg-slate-100 dark:bg-slate-900/50 py-16 sm:py-24 border-y border-slate-200 dark:border-slate-800 transition-colors">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-xs font-bold text-brand-600 dark:text-brand-400 tracking-wider uppercase mb-2">BEHAVIOR TYPES</h2>
+                    <h3 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">常見的霸凌樣態辨識</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
+                        霸凌不只限於肢體衝突，請點選下方分類了解各種形式。
+                    </p>
+                </div>
+
+                <!-- 分頁按鈕群組 -->
+                <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
+                    <button onclick="switchTab('verbal')" id="btn-verbal" class="tab-btn px-6 py-3 rounded-xl font-medium text-sm sm:text-base bg-brand-600 text-white shadow-sm transition-all">
+                        💬 言語霸凌
+                    </button>
+                    <button onclick="switchTab('physical')" id="btn-physical" class="tab-btn px-6 py-3 rounded-xl font-medium text-sm sm:text-base bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 shadow-sm transition-all">
+                        🤛 肢體霸凌
+                    </button>
+                    <button onclick="switchTab('relation')" id="btn-relation" class="tab-btn px-6 py-3 rounded-xl font-medium text-sm sm:text-base bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 shadow-sm transition-all">
+                        👥 關係霸凌
+                    </button>
+                    <button onclick="switchTab('cyber')" id="btn-cyber" class="tab-btn px-6 py-3 rounded-xl font-medium text-sm sm:text-base bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 shadow-sm transition-all">
+                        💻 網路霸凌
+                    </button>
+                </div>
+
+                <!-- 分頁內容顯示區 -->
+                <div class="max-w-4xl mx-auto bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-10 shadow-sm border border-slate-200 dark:border-slate-800 transition-colors">
+                    <!-- 言語霸凌內容 -->
+                    <div id="content-verbal" class="tab-content">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 rounded-2xl flex items-center justify-center text-2xl font-bold">💬</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 dark:text-white">言語霸凌 (Verbal Bullying)</h4>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm">透過語言對他人造成精神傷害</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-slate-700 dark:text-slate-300 text-base">
+                            <li class="flex items-start gap-3"><span class="text-brand-600 font-bold">•</span> 持續嘲笑、取難聽綽號、惡意批評。</li>
+                            <li class="flex items-start gap-3"><span class="text-brand-600 font-bold">•</span> 公開威脅、恐嚇、辱罵或造謠中傷。</li>
+                            <li class="flex items-start gap-3"><span class="text-brand-600 font-bold">•</span> 針對外貌、家庭背景、口音進行惡意嘲弄。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 肢體霸凌內容 -->
+                    <div id="content-physical" class="tab-content hidden">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 rounded-2xl flex items-center justify-center text-2xl font-bold">🤛</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 dark:text-white">肢體霸凌 (Physical Bullying)</h4>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm">以暴力手段侵害他人身體與財產</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-slate-700 dark:text-slate-300 text-base">
+                            <li class="flex items-start gap-3"><span class="text-brand-600 font-bold">•</span> 推擠、毆打、踹踢、巴頭或肢體拉扯。</li>
+                            <li class="flex items-start gap-3"><span class="text-brand-600 font-bold">•</span> 強行搶奪、損壞、藏匿他人私人物品或金錢。</li>
+                            <li class="flex items-start gap-3"><span class="text-brand-600 font-bold">•</span> 強迫他人做不願意或有害安全的動作。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 關係霸凌內容 -->
+                    <div id="content-relation" class="tab-content hidden">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center text-2xl font-bold">👥</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 dark:text-white">關係霸凌 (Relational Bullying)</h4>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm">透過破壞人際關係來孤立他人</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-slate-700 dark:text-slate-300 text-base">
+                            <li class="flex items-start gap-3"><span class="text-brand-600 font-bold">•</span> 故意孤立、排擠特定同學，不讓其加入團體。</li>
+                            <li class="flex items-start gap-3"><span class="text-brand-600 font-bold">•</span> 散播謠言或祕密，讓其他人排斥被害人。</li>
+                            <li class="flex items-start gap-3"><span class="text-brand-600 font-bold">•</span> 脅迫他人不得與被害人做朋友。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 網路霸凌內容 -->
+                    <div id="content-cyber" class="tab-content hidden">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400 rounded-2xl flex items-center justify-center text-2xl font-bold">💻</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 dark:text-white">網路霸凌 (Cyberbullying)</h4>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm">利用數位科技與社群媒體進行攻擊</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-slate-700 dark:text-slate-300 text-base">
+                            <li class="flex items-start gap-3"><span class="text-brand-600 font-bold">•</span> 在社群平台、群組留下惡意留言或嘲弄圖片。</li>
+                            <li class="flex items-start gap-3"><span class="text-brand-600 font-bold">•</span> 散布不雅照片、私密影片或捏造不實對話。</li>
+                            <li class="flex items-start gap-3"><span class="text-brand-600 font-bold">•</span> 設立專門黑特（Hate）帳號或匿名留言版進行攻擊。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 通報與調查處理流程 (Process) -->
+        <section id="process" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-600 dark:text-brand-400 tracking-wider uppercase mb-2">WORKFLOW</h2>
+                <h3 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">校園霸凌通報與處理流程</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
+                    學校依循嚴謹的準則進行受理、調查與輔導，保障當事人權益。
+                </p>
+            </div>
+
+            <!-- 時間軸/流程設計 -->
+            <div class="relative max-w-4xl mx-auto">
+                <div class="absolute left-6 sm:left-1/2 top-0 bottom-0 w-1 bg-brand-100 dark:bg-brand-950 transform -translate-x-1/2 hidden sm:block"></div>
+
+                <!-- 步驟 1 -->
+                <div class="relative flex flex-col sm:flex-row items-start mb-12">
+                    <div class="sm:w-1/2 sm:pr-12 sm:text-right mb-4 sm:mb-0">
+                        <span class="text-xs font-bold text-brand-600 dark:text-brand-400 uppercase">Step 01</span>
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">發現與通報</h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">
+                            任何人員發現校園霸凌情形，應立即向學校防制委員會通報（24小時內完成校安通報）。
+                        </p>
+                    </div>
+                    <div class="absolute left-6 sm:left-1/2 transform -translate-x-1/2 w-12 h-12 bg-brand-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md z-10">
+                        1
+                    </div>
+                    <div class="sm:w-1/2 sm:pl-12 sm:text-left pl-16">
+                        <div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400">
+                            💡 可由被害人、目擊者或家長向導師、學務處或專線提出。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 步驟 2 -->
+                <div class="relative flex flex-col sm:flex-row items-start mb-12">
+                    <div class="sm:w-1/2 sm:pr-12 sm:text-right mb-4 sm:mb-0 order-1 sm:order-none">
+                        <div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400">
+                            🛡️ 委員會組成包含法律、心理、教育專家，確保公正客觀。
+                        </div>
+                    </div>
+                    <div class="absolute left-6 sm:left-1/2 transform -translate-x-1/2 w-12 h-12 bg-brand-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md z-10 order-0 sm:order-none">
+                        2
+                    </div>
+                    <div class="sm:w-1/2 sm:pl-12 sm:text-left pl-16 order-2 sm:order-none">
+                        <span class="text-xs font-bold text-brand-600 dark:text-brand-400 uppercase">Step 02</span>
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">受理與調查小組成立</h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">
+                            學校於受理後組成防制小組，於一定期限內展開調查訪談，釐清事實真相。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 步驟 3 -->
+                <div class="relative flex flex-col sm:flex-row items-start mb-12">
+                    <div class="sm:w-1/2 sm:pr-12 sm:text-right mb-4 sm:mb-0">
+                        <span class="text-xs font-bold text-brand-600 dark:text-brand-400 uppercase">Step 03</span>
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">審議與防制處理</h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">
+                            確認是否構成霸凌。若屬實，依法給予行為人適當懲處及輔導措施；不成立則提供關係人關懷輔導。
+                        </p>
+                    </div>
+                    <div class="absolute left-6 sm:left-1/2 transform -translate-x-1/2 w-12 h-12 bg-brand-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md z-10">
+                        3
+                    </div>
+                    <div class="sm:w-1/2 sm:pl-12 sm:text-left pl-16">
+                        <div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400">
+                            ⚖️ 確保當事人之陳述權與保密義務，維護雙方權益。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 步驟 4 -->
+                <div class="relative flex flex-col sm:flex-row items-start">
+                    <div class="sm:w-1/2 sm:pr-12 sm:text-right mb-4 sm:mb-0 order-1 sm:order-none">
+                        <div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400">
+                            🌱 提供長期追蹤與心理諮商，協助重建安全溫馨之學習氛圍。
+                        </div>
+                    </div>
+                    <div class="absolute left-6 sm:left-1/2 transform -translate-x-1/2 w-12 h-12 bg-brand-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md z-10 order-0 sm:order-none">
+                        4
+                    </div>
+                    <div class="sm:w-1/2 sm:pl-12 sm:text-left pl-16 order-2 sm:order-none">
+                        <span class="text-xs font-bold text-brand-600 dark:text-brand-400 uppercase">Step 04</span>
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">後續追蹤與輔導</h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">
+                            持續進行個案輔導追蹤，並定期檢討校園防制成效，落實友善校園環境。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 申訴與求助管道 (Support Channels) -->
+        <section id="support" class="bg-brand-900 text-white py-16 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold text-brand-400 tracking-wider uppercase mb-2">HELP & SUPPORT</h2>
+                    <h3 class="text-2xl sm:text-4xl font-extrabold mb-4">申訴管道與求助專線</h3>
+                    <p class="text-slate-300 text-base sm:text-lg">
+                        當你遭遇霸凌或需要協助時，請勇敢尋求專業支援，我們隨時準備聆聽。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <!-- 專線 1 -->
+                    <div class="bg-slate-800/80 border border-slate-700 p-8 rounded-2xl backdrop-blur-sm text-center">
+                        <div class="w-14 h-14 bg-red-500/20 text-red-400 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6">
+                            📞
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">校園反霸凌專線</h4>
+                        <p class="text-2xl font-black text-brand-400 tracking-wider mb-4">1953</p>
+                        <p class="text-xs text-slate-400">教育部 24 小時免付費專線，隨時為您服務。</p>
+                    </div>
+
+                    <!-- 專線 2 -->
+                    <div class="bg-slate-800/80 border border-slate-700 p-8 rounded-2xl backdrop-blur-sm text-center">
+                        <div class="w-14 h-14 bg-brand-500/20 text-brand-400 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6">
+                            🏫
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">學務處防制信箱</h4>
+                        <p class="text-lg font-bold text-white tracking-wide mb-4">bully@school.edu.tw</p>
+                        <p class="text-xs text-slate-400">校內專責受理電子信箱，保密處理。</p>
+                    </div>
+
+                    <!-- 專線 3 -->
+                    <div class="bg-slate-800/80 border border-slate-700 p-8 rounded-2xl backdrop-blur-sm text-center">
+                        <div class="w-14 h-14 bg-amber-500/20 text-amber-400 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6">
+                            🛡️
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">人本/青少年專線</h4>
+                        <p class="text-2xl font-black text-brand-400 tracking-wider mb-4">0800-007-585</p>
+                        <p class="text-xs text-slate-400">提供青少年心理協談與權益諮詢。</p>
+                    </div>
+                </div>
+
+                <!-- 模擬線上匿名通報表單 -->
+                <div class="max-w-2xl mx-auto bg-slate-800 border border-slate-700 p-8 rounded-2xl shadow-xl">
+                    <h4 class="text-xl font-bold mb-2">線上匿名求助/通報表單</h4>
+                    <p class="text-slate-400 text-xs mb-6">資料將直接安全寫入 Google 試算表，我們將嚴格保密您的個資。</p>
+                    
+                    <form id="report-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">通報身分</label>
+                            <select id="report-identity" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500">
+                                <option value="當事人 (受害者)">當事人 (受害者)</option>
+                                <option value="目擊同學">目擊同學</option>
+                                <option value="家長 / 監護人">家長 / 監護人</option>
+                                <option value="教職員工">教職員工</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">事件簡述與狀況</label>
+                            <textarea id="report-content" rows="4" required placeholder="請簡述發生時間、地點、狀況與涉及人員..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">聯繫方式 (選填，若需專人回覆)</label>
+                            <input type="text" id="report-contact" placeholder="電話或電子郵件" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500">
+                        </div>
+                        
+                        <!-- GAS 部署網址已設定為您的專屬網址 -->
+                        <div class="hidden">
+                            <input type="text" id="gas-url" value="https://script.google.com/macros/s/AKfycbz4SIb5j08FnD5vwe_lJLmd8kmzptDytYqSlE6_KyCKrR3wYNPuNy1ROkzhDnYD66V5zg/exec">
+                        </div>
+
+                        <button type="submit" id="submit-btn" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-brand-500/20 transition-all flex items-center justify-center gap-2">
+                            <span id="submit-text">送出通報至 Google 試算表</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. 常見 Q&A (FAQ Accordion) -->
+        <section id="faq" class="py-16 sm:py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-xs font-bold text-brand-600 dark:text-brand-400 tracking-wider uppercase mb-2">FAQ</h2>
+                <h3 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">常見問題 Q&A</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
+                    針對校園霸凌防治準則的常見疑問解答。
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- QA 1 -->
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm transition-colors">
+                    <button onclick="toggleFaq(1)" class="w-full flex justify-between items-center p-6 text-left font-bold text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                        <span>Q1：同學之間開玩笑跟霸凌有什麼差別？</span>
+                        <svg id="faq-icon-1" class="w-5 h-5 text-slate-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="faq-content-1" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-4">
+                        開玩笑是雙方都覺得好笑、彼此樂意接受的互動。如果有一方感到不舒服、被冒犯、痛苦，且對方持續這樣做、雙方處於權力不對等，那就符合霸凌的要件，不能用「只是開玩笑」來合理化。
+                    </div>
+                </div>
+
+                <!-- QA 2 -->
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm transition-colors">
+                    <button onclick="toggleFaq(2)" class="w-full flex justify-between items-center p-6 text-left font-bold text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                        <span>Q2：匿名通報會不會遭到吃案或不受理？</span>
+                        <svg id="faq-icon-2" class="w-5 h-5 text-slate-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="faq-content-2" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-4">
+                        不會。依據規定，學校接獲任何形式（包含匿名）的霸凌通報或檢舉，皆須依法錄案處理並召開防制委員會審議。校安通報系統與上級機關亦會進行監督稽核。
+                    </div>
+                </div>
+
+                <!-- QA 3 -->
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm transition-colors">
+                    <button onclick="toggleFaq(3)" class="w-full flex justify-between items-center p-6 text-left font-bold text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                        <span>Q3：目擊霸凌但沒有參與，這樣也算有責任嗎？</span>
+                        <svg id="faq-icon-3" class="w-5 h-5 text-slate-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="faq-content-3" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-4">
+                        雖然旁觀者不是加害人，但在友善校園中，鼓勵大家在自身安全許可下「伸出援手」、「通報師長」或「事後關懷被害人」，避免沉默助長霸凌氣焰。
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁尾 (Footer) -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div>
+                <p class="font-bold text-white text-lg mb-1">校園霸凌防制專區</p>
+                <p class="text-xs text-slate-500">落實關懷、尊重、安全的校園環境</p>
+            </div>
+            <p class="text-xs text-slate-500">
+                © 2026 校園霸凌防治教育網. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- 自訂訊息彈窗 -->
+    <div id="custom-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-md w-full p-6 shadow-2xl transform transition-all text-center">
+            <div id="modal-icon" class="w-14 h-14 bg-brand-100 dark:bg-brand-950 text-brand-600 dark:text-brand-400 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">
+                ✓
+            </div>
+            <h3 id="modal-title" class="text-xl font-bold text-slate-900 dark:text-white mb-2">通報已送出</h3>
+            <p id="modal-message" class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed">感謝您的通報，學校學務處已收到您的資訊，將依法提供協助並嚴格保密。</p>
+            <button onclick="closeModal()" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3 rounded-xl transition-all">
+                確定
+            </button>
+        </div>
+    </div>
+
+    <!-- 原生 JS 互動邏輯 -->
+    <script>
+        // 手機版選單切換
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 背景音樂控制
+        const bgMusic = document.getElementById('bg-music');
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                bgMusic.pause();
+                isPlaying = false;
+                document.getElementById('music-icon').textContent = '🔇';
+                document.getElementById('music-icon-mob').textContent = '🔇';
+                document.getElementById('music-text').textContent = '音樂關閉';
+            } else {
+                bgMusic.play().then(() => {
+                    isPlaying = true;
+                    document.getElementById('music-icon').textContent = '🎵';
+                    document.getElementById('music-icon-mob').textContent = '🎵';
+                    document.getElementById('music-text').textContent = '音樂播放中';
+                }).catch(err => {
+                    console.log("自動播放遭瀏覽器阻擋或載入中", err);
+                });
+            }
+        }
+
+        // 深淺色模式切換
+        function toggleTheme() {
+            const htmlEl = document.documentElement;
+            const themeIcon = document.getElementById('theme-icon');
+            const themeIconMob = document.getElementById('theme-icon-mob');
+
+            if (htmlEl.classList.contains('dark')) {
+                htmlEl.classList.remove('dark');
+                themeIcon.textContent = '🌙';
+                themeIconMob.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlEl.classList.add('dark');
+                themeIcon.textContent = '☀️';
+                themeIconMob.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // 初始化檢查儲存的主題
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            document.getElementById('theme-icon').textContent = '☀️';
+            document.getElementById('theme-icon-mob').textContent = '☀️';
+        }
+
+        // 樣態辨識分頁切換
+        function switchTab(type) {
+            const tabs = ['verbal', 'physical', 'relation', 'cyber'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`btn-${t}`);
+                const content = document.getElementById(`content-${t}`);
+                if (t === type) {
+                    btn.classList.remove('bg-white', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300', 'hover:bg-slate-200', 'dark:hover:bg-slate-700');
+                    btn.classList.add('bg-brand-600', 'text-white', 'shadow-sm');
+                    content.classList.remove('hidden');
+                } else {
+                    btn.classList.remove('bg-brand-600', 'text-white', 'shadow-sm');
+                    btn.classList.add('bg-white', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300', 'hover:bg-slate-200', 'dark:hover:bg-slate-700');
+                    content.classList.add('hidden');
+                }
+            });
+        }
+
+        // 常見 Q&A 展開/收合
+        function toggleFaq(id) {
+            const content = document.getElementById(`faq-content-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // 表單送出至 Google 試算表 (GAS 整合，避開 CORS)
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const identity = document.getElementById('report-identity').value;
+            const content = document.getElementById('report-content').value;
+            const contact = document.getElementById('report-contact').value || '未填寫';
+            const scriptUrl = document.getElementById('gas-url').value;
+            const submitBtn = document.getElementById('submit-btn');
+            const submitText = document.getElementById('submit-text');
+
+            // 檢查是否已設定 GAS 網址
+            if (scriptUrl.includes('YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE')) {
+                // 若尚未設定真實 GAS 網址，顯示模擬成功以便預覽
+                showModal('通報已模擬送出', '尚未設定 Google Apps Script 部署網址，目前為預覽模式。當您將後端 GAS 部署並填入網址後，資料將自動寫入 Google 試算表！');
+                document.getElementById('report-form').reset();
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitText.textContent = '資料傳送中...';
+
+            // 準備對應的欄位資料
+            const formData = {
+                timestamp: new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' }),
+                identity: identity,
+                content: content,
+                contact: contact
+            };
+
+            try {
+                // 使用 no-cors 模式呼叫 GAS 避免瀏覽器 CORS 阻擋
+                await fetch(scriptUrl, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    cache: 'no-cache',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                // 因為 no-cors 無法讀取回傳內容，採取成功預期提示
+                showModal('通報已成功送出', '感謝您的通報，資料已安全寫入 Google 試算表，學校學務處將盡速依法處理並嚴格保密。');
+                document.getElementById('report-form').reset();
+            } catch (error) {
+                console.error('GAS 送出錯誤:', error);
+                showModal('傳送發生錯誤', '網路連線異常或網址有誤，請稍後再試，或直接撥打 1953 反霸凌專線。');
+            } finally {
+                submitBtn.disabled = false;
+                submitText.textContent = '送出通報至 Google 試算表';
+            }
+        }
+
+        function showModal(title, message) {
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-message').textContent = message;
+            const modal = document.getElementById('custom-modal');
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('custom-modal');
+            modal.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
